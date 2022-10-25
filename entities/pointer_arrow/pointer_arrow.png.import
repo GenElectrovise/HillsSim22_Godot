@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pointer_arrow.png-cf8164baee49b51dd05f947d69be870f.stex"
+path="res://.import/pointer_arrow.png-fe056936189fb59f7fd4c0975fc90563.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/player/pointer_arrow.png"
-dest_files=[ "res://.import/pointer_arrow.png-cf8164baee49b51dd05f947d69be870f.stex" ]
+source_file="res://entities/pointer_arrow/pointer_arrow.png"
+dest_files=[ "res://.import/pointer_arrow.png-fe056936189fb59f7fd4c0975fc90563.stex" ]
 
 [params]
 
