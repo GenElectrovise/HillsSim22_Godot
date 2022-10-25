@@ -23,4 +23,4 @@ func look_at_mouse():
 
 func _physics_process(delta):
 	handle_input()
-	look_at_mouse()
+	# look_at_mouse()
