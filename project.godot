@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "Player",
 "language": "GDScript",
 "path": "res://entities/player/player.gd"
+}, {
+"base": "Node2D",
+"class": "Teleporter",
+"language": "GDScript",
+"path": "res://entities/teleporter/teleporter.gd"
 } ]
 _global_script_class_icons={
-"Player": ""
+"Player": "",
+"Teleporter": ""
 }
 
 [application]
