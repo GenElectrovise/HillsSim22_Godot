@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+class_name Player
+
 var velocity : Vector2 = Vector2()
 const reach = 10
 
