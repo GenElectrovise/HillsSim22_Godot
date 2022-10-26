@@ -19,7 +19,6 @@ func switch_scene(path):
 
 	call_deferred("_deferred_switch_scene", path)
 
-
 func _deferred_switch_scene(path):
 	print("Switching to ", path)
 	
