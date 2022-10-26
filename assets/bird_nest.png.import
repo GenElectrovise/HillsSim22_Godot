@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/[Q] Teleport.png-1c2c128034b61abf151ff8d791b0ed1b.stex"
+path="res://.import/bird_nest.png-34fec959d237893e81fca4d1dd1bbc32.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/[Q] Teleport.png"
-dest_files=[ "res://.import/[Q] Teleport.png-1c2c128034b61abf151ff8d791b0ed1b.stex" ]
+source_file="res://assets/bird_nest.png"
+dest_files=[ "res://.import/bird_nest.png-34fec959d237893e81fca4d1dd1bbc32.stex" ]
 
 [params]
 

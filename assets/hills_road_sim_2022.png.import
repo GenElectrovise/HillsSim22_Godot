@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/player.png-5e2e7e7552b041428056885c13411183.stex"
+path="res://.import/hills_road_sim_2022.png-e9225803292ab27417468d62de07c20a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/player/player.png"
-dest_files=[ "res://.import/player.png-5e2e7e7552b041428056885c13411183.stex" ]
+source_file="res://assets/hills_road_sim_2022.png"
+dest_files=[ "res://.import/hills_road_sim_2022.png-e9225803292ab27417468d62de07c20a.stex" ]
 
 [params]
 

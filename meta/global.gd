@@ -1,6 +1,7 @@
 extends Node2D
 
 var current_scene = null
+var random = RandomNumberGenerator.new()
 
 func _ready():
 	var root = get_tree().get_root()

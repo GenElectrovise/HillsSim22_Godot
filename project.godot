@@ -9,32 +9,57 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "Objective",
+"language": "GDScript",
+"path": "res://quests/objective.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
 "path": "res://entities/player/player.gd"
 }, {
 "base": "Node2D",
+"class": "Quest",
+"language": "GDScript",
+"path": "res://quests/quest.gd"
+}, {
+"base": "Node2D",
 "class": "Teleporter",
 "language": "GDScript",
 "path": "res://entities/teleporter/teleporter.gd"
+}, {
+"base": "Objective",
+"class": "WatchBirdsObjective",
+"language": "GDScript",
+"path": "res://quests/watch_birds/watch_birds_obj.gd"
+}, {
+"base": "Quest",
+"class": "WatchBirdsQuest",
+"language": "GDScript",
+"path": "res://quests/watch_birds/watch_birds_quest.gd"
 } ]
 _global_script_class_icons={
+"Objective": "",
 "Player": "",
-"Teleporter": ""
+"Quest": "",
+"Teleporter": "",
+"WatchBirdsObjective": "",
+"WatchBirdsQuest": ""
 }
 
 [application]
 
 config/name="Hills Sim 22 Godot"
-run/main_scene="res://levels/outside/outside_scene.tscn"
+run/main_scene="res://levels/title/main_title.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-Global="*res://meta/global.tscn"
+Global="*res://meta/global.gd"
 PlayerData="*res://meta/player_data.gd"
 Levels="*res://levels/levels.gd"
+QuestManager="*res://meta/quest_manager.gd"
 
 [display]
 
@@ -48,6 +73,7 @@ version_control_plugin_name="GitAPI"
 [global]
 
 allow=false
+main=false
 
 [gui]
 

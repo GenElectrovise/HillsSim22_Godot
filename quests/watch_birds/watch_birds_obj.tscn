@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://quests/watch_birds/bird_nest.png" type="Texture" id=1]
-[ext_resource path="res://quests/watch_birds/watch_birds.gd" type="Script" id=2]
+[ext_resource path="res://assets/bird_nest.png" type="Texture" id=1]
+[ext_resource path="res://quests/watch_birds/watch_birds_quest.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bird_nest.png-718e8ccda96e4c1c98c579ed590a9d1a.stex"
+path="res://.import/outside_tiles.png-18574280e5792a8d0221e3c3711a58f8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://quests/watch_birds/bird_nest.png"
-dest_files=[ "res://.import/bird_nest.png-718e8ccda96e4c1c98c579ed590a9d1a.stex" ]
+source_file="res://assets/outside_tiles.png"
+dest_files=[ "res://.import/outside_tiles.png-18574280e5792a8d0221e3c3711a58f8.stex" ]
 
 [params]
 
