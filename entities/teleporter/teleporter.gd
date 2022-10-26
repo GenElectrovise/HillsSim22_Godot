@@ -58,7 +58,7 @@ func teleport(entity):
 	if(entity is Player && cooldown <= 0):
 		print("Teleporting ", entity, " to ", destination_level, ":", destination_position)
 		var lvl = Levels.lookup(destination_level)
-		print("(Destination level, '", destination_level, "' is '", lvl, "')")
+		print("(Destination level, '", destination_level, "', is '", lvl, "')")
 		Global.switch_scene(lvl)
 		entity.position = destination_position
 		PlayerData.stash(entity as Player)
