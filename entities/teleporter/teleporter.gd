@@ -10,8 +10,9 @@ const DARK = Color(0.5, 0.5, 0.5)
 const LIGHT = Color(1, 1, 1)
 const Levels = preload("res://levels/levels.gd")
 
-export(String) var destination_level
-export(Vector2) var destination_position
+# Implementers should also export
+export(String) var destination_level = ""
+export(Vector2) var destination_position = Vector2.ZERO
 
 var font
 var entering_entity
@@ -59,6 +60,7 @@ func teleport(entity):
 		var lvl = Levels.lookup(destination_level)
 		print("(Destination level, '", destination_level, "' is '", lvl, "')")
 		Global.switch_scene(lvl)
+		entity.position = destination_position
 		PlayerData.stash(entity as Player)
 		cooldown = 2
 		
