@@ -7,6 +7,11 @@ const reach = 10
 
 const POINTER_ARROW = preload("res://entities/pointer_arrow/pointer_arrow.tscn")
 
+func _ready():
+	print("Player is getting ready!")
+	if(PlayerData.has_stash):
+		call_deferred("regenerate_from_player_data")
+
 func handle_input():
 	velocity = Vector2.ZERO
 	
@@ -39,3 +44,5 @@ func attempt_interact():
 	arrow.initialize(point)
 	add_child(arrow)
 		
+func regenerate_from_player_data():
+	PlayerData.regenerate(self)

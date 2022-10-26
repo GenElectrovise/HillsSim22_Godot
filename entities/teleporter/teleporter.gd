@@ -3,18 +3,21 @@ extends Node2D
 onready var area = $Area2D
 onready var teleport = $TeleportSprite
 
-const DARK = Color(0.5, 0.5, 0.5)
-const LIGHT = Color(1, 1, 1)
-	
+
 class_name Teleporter
 
-var destination_level
-var destination_position
+const DARK = Color(0.5, 0.5, 0.5)
+const LIGHT = Color(1, 1, 1)
+const Levels = preload("res://levels/levels.gd")
+
+export(String) var destination_level
+export(Vector2) var destination_position
 
 var font
 var entering_entity
 var player_in_area = false
 var is_hovered = false
+var cooldown = 0
 
 func _ready():
 	teleport.visible = true
@@ -35,22 +38,32 @@ func _physics_process(delta):
 		teleport.self_modulate = LIGHT
 	else:
 		teleport.self_modulate = DARK
+	cooldown = max(0, cooldown - delta)
 
 func _on_Area2D_area_entered(area_e):
 	if(area_e.get_parent() is Player):
-		print("Entity entered area of teleporter")
 		player_in_area = true
 		entering_entity = area_e.get_parent()
 
 func _on_Area2D_area_exited(area_e):
 	if(area_e.get_parent() is Player):
-		print("Entity left area of teleporter")
 		player_in_area = false
 		entering_entity = null
 
-func teleport(player):
-	if(player is Player):
-		player.position = Vector2.ZERO
+func teleport(entity):
+	if(cooldown > 0):
+		print("Teleport is on cooldown (cooldown=", cooldown, ")")
+		pass
+	if(entity is Player && cooldown <= 0):
+		print("Teleporting ", entity, " to ", destination_level, ":", destination_position)
+		var lvl = Levels.lookup(destination_level)
+		print("(Destination level, '", destination_level, "' is '", lvl, "')")
+		Global.switch_scene(lvl)
+		PlayerData.stash(entity as Player)
+		cooldown = 2
+		
+	else:
+		print("Failed to teleport ", entity, " cooldown=", cooldown)
 
 func _on_Area2D_mouse_entered():
 	is_hovered = true

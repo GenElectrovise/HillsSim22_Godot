@@ -18,5 +18,7 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Teleporter" parent="." instance=ExtResource( 3 )]
+destination_level = "inside"
+destination_position = Vector2( 25, 25 )
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

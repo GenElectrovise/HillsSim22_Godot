@@ -30,6 +30,12 @@ config/name="Hills Sim 22 Godot"
 run/main_scene="res://levels/outside/outside_scene.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://meta/global.tscn"
+PlayerData="*res://meta/player_data.gd"
+Levels="*res://levels/levels.gd"
+
 [display]
 
 window/dpi/allow_hidpi=true
