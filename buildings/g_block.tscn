@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://levels/outside/outside_tiles.tres" type="TileSet" id=1]
+[ext_resource path="res://decorations/grass_medium.tscn" type="PackedScene" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Building" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -262145, 18, 0, -327680, 17, 0, -327679, 19, 0, -327678, 19, 0, -327677, 19, 0, -327676, 19, 0, -327675, 19, 0, -327674, 22, 0, -327673, 18, 0, -327672, 18, 0, -196609, 18, 0, -262144, 21, 0, -262143, 25, 0, -262142, 25, 0, -262141, 25, 0, -262140, 25, 0, -262139, 25, 0, -262138, 24, 0, -262137, 18, 0, -262136, 18, 0, -131073, 18, 0, -196608, 18, 0, -196607, 18, 0, -196606, 18, 0, -196605, 18, 0, -196604, 18, 0, -196603, 18, 0, -196602, 18, 0, -196601, 18, 0, -196600, 18, 0, -65537, 18, 0, -131072, 17, 0, -131071, 19, 0, -131070, 19, 0, -131069, 19, 0, -131068, 19, 0, -131067, 19, 0, -131066, 22, 0, -131065, 18, 0, -131064, 18, 0, -1, 18, 0, -65536, 21, 0, -65535, 25, 0, -65534, 25, 0, -65533, 25, 0, -65532, 25, 0, -65531, 25, 0, -65530, 24, 0, -65529, 18, 0, -65528, 18, 0, 65535, 35, 0, 0, 35, 0, 1, 35, 0, 2, 35, 0, 3, 35, 0, 4, 35, 0, 5, 35, 0, 6, 35, 0, 7, 35, 0, 8, 35, 0 )
+
+[node name="Decoration" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -262146, 34, 0, -327671, -1610612705, 0, -196610, 34, 0, -262135, -1610612705, 0, -131074, 34, 0, -196599, -1610612705, 0, -65538, 34, 0, -131063, -1610612705, 0, -2, 34, 0, -65527, -1610612705, 0, 65534, 37, 0, 65535, 35, 0, 0, 35, 0, 1, 35, 0, 2, 35, 0, 3, 35, 0, 4, 35, 0, 5, 35, 0, 6, 35, 0, 7, 35, 0, 8, 35, 0, 9, -1610612706, 0 )
+
+[node name="Medium Grass" type="Node2D" parent="Decoration"]
+
+[node name="Node2D" parent="Decoration/Medium Grass" instance=ExtResource( 2 )]
+position = Vector2( 66, 0 )
+
+[node name="Node2D2" parent="Decoration/Medium Grass" instance=ExtResource( 2 )]
+position = Vector2( 84, 1 )
+
+[node name="Node2D3" parent="Decoration/Medium Grass" instance=ExtResource( 2 )]
+position = Vector2( 103, 1 )
+
+[node name="Node2D4" parent="Decoration/Medium Grass" instance=ExtResource( 2 )]
+position = Vector2( 51, 1 )
+
+[node name="Node2D5" parent="Decoration/Medium Grass" instance=ExtResource( 2 )]
+position = Vector2( 119, 1 )
+
+[node name="Node2D6" parent="Decoration/Medium Grass" instance=ExtResource( 2 )]
+position = Vector2( 137, 0 )
+
+[node name="Node2D7" parent="Decoration/Medium Grass" instance=ExtResource( 2 )]
+position = Vector2( -7, 0 )
+
+[node name="Node2D8" parent="Decoration/Medium Grass" instance=ExtResource( 2 )]
+position = Vector2( 13, 0 )
+
+[node name="Node2D9" parent="Decoration/Medium Grass" instance=ExtResource( 2 )]
+position = Vector2( 34, 0 )
