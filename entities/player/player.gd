@@ -4,12 +4,14 @@ class_name Player
 
 var velocity : Vector2 = Vector2()
 const reach = 10
+onready var COSTUME: Costume = $Costume
 
 const POINTER_ARROW = preload("res://entities/pointer_arrow/pointer_arrow.tscn")
 
 func _ready():
 	if(PlayerData.has_stash):
 		call_deferred("regenerate_from_player_data")
+	COSTUME.reset()
 
 func handle_input():
 	velocity = Vector2.ZERO
