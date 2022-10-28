@@ -76,6 +76,8 @@ QuestManager="*res://meta/quest_manager.gd"
 [display]
 
 window/dpi/allow_hidpi=true
+window/tablet_driver=""
+window/stretch/mode="viewport"
 
 [editor]
 
