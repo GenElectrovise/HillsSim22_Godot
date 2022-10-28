@@ -25,6 +25,7 @@ func reset():
 	HEAD.modulate = scaleColour(241, 186, 144) # Pale
 	# EYE.modulate = scaleColour(121, 64, 13) # Brown
 	HAIR.modulate = scaleColour(189, 107, 29) # Brown
+	HANDS.modulate = scaleColour(241, 186, 144) # Pale
 	SHIRT.modulate = scaleColour(217, 14, 15) # Red
 	LEGS.modulate = scaleColour(217, 14, 15) # Red
 	FEET.modulate = scaleColour(217, 14, 15) # Red

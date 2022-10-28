@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bird_nest.png-34fec959d237893e81fca4d1dd1bbc32.stex"
+path="res://.import/bird_nest.png-1232c810c6393ed1f5de7e9149260d55.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bird_nest.png"
-dest_files=[ "res://.import/bird_nest.png-34fec959d237893e81fca4d1dd1bbc32.stex" ]
+source_file="res://assets/quests/bird_nest.png"
+dest_files=[ "res://.import/bird_nest.png-1232c810c6393ed1f5de7e9149260d55.stex" ]
 
 [params]
 
