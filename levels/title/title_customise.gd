@@ -1,10 +1,11 @@
 extends Node
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+onready var TITLE_SCREEN = get_parent()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	pass 
+
+func _on_StartButton_pressed():
 	Global.switch_scene(Levels.lookup("outside"))
+	pass 
