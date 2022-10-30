@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/quest_box.png-09a39ff0de01aa1e4026fdd661b60cc5.stex"
+path="res://.import/roundel_social.png-d725bae31294269e20b13610646e6525.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gui/quest_box.png"
-dest_files=[ "res://.import/quest_box.png-09a39ff0de01aa1e4026fdd661b60cc5.stex" ]
+source_file="res://assets/gui/roundel_social.png"
+dest_files=[ "res://.import/roundel_social.png-d725bae31294269e20b13610646e6525.stex" ]
 
 [params]
 
