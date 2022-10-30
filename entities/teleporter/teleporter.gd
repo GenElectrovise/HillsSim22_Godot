@@ -1,7 +1,7 @@
 extends Node2D
 
 onready var area = $Area2D
-onready var teleport = $TeleportSprite
+onready var teleport = $TeleportLabel
 
 
 class_name Teleporter

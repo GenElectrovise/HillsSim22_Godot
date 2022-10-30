@@ -66,4 +66,3 @@ destination_position = Vector2( 25, 25 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
-zoom = Vector2( 0.25, 0.25 )

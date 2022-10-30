@@ -37,7 +37,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "TitleScreen",
 "language": "GDScript",
-"path": "res://levels/title/title.gd"
+"path": "res://gui/title/title.gd"
 }, {
 "base": "Objective",
 "class": "WatchBirdsObjective",
@@ -63,7 +63,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Hills Sim 22 Godot"
-run/main_scene="res://levels/title/title.tscn"
+run/main_scene="res://gui/title/title.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -75,6 +75,8 @@ QuestManager="*res://meta/quest_manager.gd"
 
 [display]
 
+window/size/width=256
+window/size/height=150
 window/dpi/allow_hidpi=true
 window/tablet_driver=""
 window/stretch/mode="viewport"
