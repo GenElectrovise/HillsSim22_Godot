@@ -21,6 +21,7 @@ margin_top = 42.0
 margin_right = 150.0
 margin_bottom = 66.0
 rect_pivot_offset = Vector2( -91, -41 )
+hint_tooltip = "Social quests"
 texture = ExtResource( 2 )
 
 [node name="PersonalRoundel" type="TextureRect" parent="TextureRect"]
@@ -28,6 +29,7 @@ margin_left = 14.0
 margin_top = 87.0
 margin_right = 38.0
 margin_bottom = 111.0
+hint_tooltip = "Personal quests"
 texture = ExtResource( 3 )
 
 [node name="StudyRoundel" type="TextureRect" parent="TextureRect"]
@@ -35,6 +37,7 @@ margin_left = 14.0
 margin_top = 45.0
 margin_right = 38.0
 margin_bottom = 69.0
+hint_tooltip = "Study quests"
 texture = ExtResource( 4 )
 
 [node name="FutureRoundel" type="TextureRect" parent="TextureRect"]
@@ -42,4 +45,5 @@ margin_left = 126.0
 margin_top = 87.0
 margin_right = 150.0
 margin_bottom = 111.0
+hint_tooltip = "Future Ready quests"
 texture = ExtResource( 5 )
