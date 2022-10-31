@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://gui/title_main.gd" type="Script" id=1]
-[ext_resource path="res://gui/title.gd" type="Script" id=2]
-[ext_resource path="res://gui/title_newgame.gd" type="Script" id=3]
-[ext_resource path="res://gui/customise_character.gd" type="Script" id=4]
-[ext_resource path="res://assets/hills_road_sim_2022.png" type="Texture" id=5]
+[ext_resource path="res://gui/title/title_newgame.gd" type="Script" id=1]
+[ext_resource path="res://assets/hills_road_sim_2022.png" type="Texture" id=2]
+[ext_resource path="res://gui/title/title_main.gd" type="Script" id=3]
+[ext_resource path="res://gui/customise_character/CustomiseCharacter.tscn" type="PackedScene" id=4]
+[ext_resource path="res://gui/title/title.gd" type="Script" id=5]
 [ext_resource path="res://themes/menu_theme/menu_theme.tres" type="Theme" id=6]
 [ext_resource path="res://assets/fonts/m5x7.tres" type="DynamicFont" id=7]
 
@@ -12,20 +12,20 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 6 )
-script = ExtResource( 2 )
+script = ExtResource( 5 )
 
 [node name="Main" type="Control" parent="."]
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
-script = ExtResource( 1 )
+script = ExtResource( 3 )
 
 [node name="Background" type="TextureRect" parent="Main"]
 margin_right = 257.0
 margin_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource( 5 )
+texture = ExtResource( 2 )
 stretch_mode = 1
 
 [node name="NewGameButton" type="Button" parent="Main"]
@@ -40,7 +40,7 @@ text = "Play"
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
-script = ExtResource( 3 )
+script = ExtResource( 1 )
 
 [node name="CustomiseCharacterButton" type="Button" parent="NewGame"]
 margin_left = 67.0
@@ -49,18 +49,7 @@ margin_right = 191.0
 margin_bottom = 89.0
 text = "Customise character"
 
-[node name="CustomiseCharacter" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-script = ExtResource( 4 )
-
-[node name="StartButton" type="Button" parent="CustomiseCharacter"]
-margin_left = 64.0
-margin_top = 69.0
-margin_right = 194.0
-margin_bottom = 100.0
-text = "Start"
+[node name="CustomiseCharacter" parent="." instance=ExtResource( 4 )]
 
 [connection signal="pressed" from="Main/NewGameButton" to="Main" method="_on_NewGameButton_pressed"]
 [connection signal="pressed" from="NewGame/CustomiseCharacterButton" to="NewGame" method="_on_CustomiseCharacterButton_pressed"]
-[connection signal="pressed" from="CustomiseCharacter/StartButton" to="CustomiseCharacter" method="_on_StartButton_pressed"]

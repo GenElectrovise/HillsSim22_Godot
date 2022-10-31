@@ -9,6 +9,7 @@ extends Node
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	QuestManager.start_quest(WatchBirdsQuest.new())
+	GUI.HUD.visible = true
 	pass # Replace with function body.
 
 func is_pausable():

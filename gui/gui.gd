@@ -5,12 +5,11 @@ extends Node
 # var a = 2
 # var b = "text"
 
+onready var HUD: HUD = $Base/HUD
+onready var Pause = $Base/Pause
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	HUD.visible = false
+	# Pause.visible # Sets itself
+	pass 
