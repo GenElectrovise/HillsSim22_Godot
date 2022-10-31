@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/outside_bg_terrain.png-f8e6810d186af84ea6ee299dee8ecef0.stex"
+path="res://.import/TEX_Outside_Old.png-cf499db28c9124b68ae405a691bb009e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://oldassets/outside_bg_terrain.png"
-dest_files=[ "res://.import/outside_bg_terrain.png-f8e6810d186af84ea6ee299dee8ecef0.stex" ]
+source_file="res://assets/oldassets/TEX_Outside_Old.png"
+dest_files=[ "res://.import/TEX_Outside_Old.png-cf499db28c9124b68ae405a691bb009e.stex" ]
 
 [params]
 

@@ -1,7 +1,6 @@
 extends Node
 
-onready var CurrentScene = $CurrentScene
-onready var Pause = $Overlay/PauseRoot
+onready var CurrentScene = null
 var random = RandomNumberGenerator.new()
 
 func _ready():

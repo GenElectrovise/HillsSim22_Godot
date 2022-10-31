@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/outside_bg_buildings.png-7d7b17dccb22de49903097837caffb67.stex"
+path="res://.import/outside_gblock.png-447fbd583eee7f9e2ff48aa46b82ec6c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://oldassets/outside_bg_buildings.png"
-dest_files=[ "res://.import/outside_bg_buildings.png-7d7b17dccb22de49903097837caffb67.stex" ]
+source_file="res://assets/oldassets/outside_gblock.png"
+dest_files=[ "res://.import/outside_gblock.png-447fbd583eee7f9e2ff48aa46b82ec6c.stex" ]
 
 [params]
 

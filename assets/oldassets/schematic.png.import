@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/outside_gblock.png-0b6785ac67f35135a64683e62235aed0.stex"
+path="res://.import/schematic.png-d6c18b59a448c04a6eba1252978a3814.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://oldassets/outside_gblock.png"
-dest_files=[ "res://.import/outside_gblock.png-0b6785ac67f35135a64683e62235aed0.stex" ]
+source_file="res://assets/oldassets/schematic.png"
+dest_files=[ "res://.import/schematic.png-d6c18b59a448c04a6eba1252978a3814.stex" ]
 
 [params]
 

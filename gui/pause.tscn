@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://gui/pause/pause.gd" type="Script" id=1]
-[ext_resource path="res://gui/menu_theme/menu_theme.tres" type="Theme" id=2]
+[ext_resource path="res://gui/pause.gd" type="Script" id=1]
+[ext_resource path="res://themes/menu_theme/menu_theme.tres" type="Theme" id=2]
 
 [node name="Pause" type="Control"]
 pause_mode = 2
@@ -10,7 +10,7 @@ anchor_bottom = 1.0
 script = ExtResource( 1 )
 
 [node name="Background" type="ColorRect" parent="."]
-modulate = Color( 0, 0, 0, 0.156863 )
+modulate = Color( 0, 0, 0, 0.329412 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 
