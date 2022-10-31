@@ -11,7 +11,8 @@ func _ready():
 	QuestManager.start_quest(WatchBirdsQuest.new())
 	pass # Replace with function body.
 
- 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+func is_pausable():
+	return true
+	# Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

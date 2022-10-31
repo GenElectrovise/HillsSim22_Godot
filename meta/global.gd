@@ -1,11 +1,17 @@
-extends Node2D
+extends Node
 
-var current_scene = null
+onready var CurrentScene = $CurrentScene
+onready var Pause = $Overlay/PauseRoot
 var random = RandomNumberGenerator.new()
 
 func _ready():
 	var root = get_tree().get_root()
-	current_scene = root.get_child(root.get_child_count() - 1)
+	CurrentScene = root.get_child(root.get_child_count() - 1)
+
+func is_pausable() -> bool:
+	if CurrentScene.has_method("is_pausable"):
+		return CurrentScene.is_pausable()
+	return false
 
 func switch_scene(path):
 	print("Deferring switch to ", path)
@@ -24,16 +30,16 @@ func _deferred_switch_scene(path):
 	print("Switching to ", path)
 	
 	# It is now safe to remove the current scene
-	current_scene.free()
+	CurrentScene.free()
 
 	# Load the new scene.
 	var s = ResourceLoader.load(path)
 
 	# Instance the new scene.
-	current_scene = s.instance()
+	CurrentScene = s.instance()
 
 	# Add it to the active scene, as child of root.
-	get_tree().get_root().add_child(current_scene)
+	get_tree().get_root().add_child(CurrentScene)
 
 	# Optionally, to make it compatible with the SceneTree.change_scene() API.
-	get_tree().set_current_scene(current_scene)
+	get_tree().set_current_scene(CurrentScene)
