@@ -37,7 +37,7 @@ _global_script_classes=[ {
 "base": "Control",
 "class": "QuestsWidget",
 "language": "GDScript",
-"path": "res://gui/hud/quests_widget.gd"
+"path": "res://gui/hud/quest_widget.gd"
 }, {
 "base": "Node2D",
 "class": "Teleporter",
@@ -94,6 +94,7 @@ window/size/test_width=1024
 window/size/test_height=600
 window/tablet_driver=""
 window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [editor]
 
