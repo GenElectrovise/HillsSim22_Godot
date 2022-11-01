@@ -8,8 +8,7 @@ class_name HUD
 
 var show_quests = false
 
-onready var QuestBox = $Quests/QuestBox
-onready var QuestButton = $Quests/QuestBox
+onready var Quests: QuestsWidget = $QuestsWidget
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
