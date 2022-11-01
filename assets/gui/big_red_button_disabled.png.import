@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/big_red_button.png-387de6e680d32aed7b224f732c0eee18.stex"
+path="res://.import/big_red_button_disabled.png-c51ddf744de0ff8be5cf128047b92f8e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gui/big_red_button.png"
-dest_files=[ "res://.import/big_red_button.png-387de6e680d32aed7b224f732c0eee18.stex" ]
+source_file="res://assets/gui/big_red_button_disabled.png"
+dest_files=[ "res://.import/big_red_button_disabled.png-c51ddf744de0ff8be5cf128047b92f8e.stex" ]
 
 [params]
 
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

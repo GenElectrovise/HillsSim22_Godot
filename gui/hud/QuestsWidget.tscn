@@ -1,16 +1,14 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/gui/roundel_study.png" type="Texture" id=1]
 [ext_resource path="res://assets/gui/roundel_future.png" type="Texture" id=2]
 [ext_resource path="res://assets/gui/roundel_social.png" type="Texture" id=3]
 [ext_resource path="res://assets/gui/roundel_personal.png" type="Texture" id=4]
-[ext_resource path="res://assets/gui/quest_box.png" type="Texture" id=5]
-[ext_resource path="res://assets/gui/big_red_button.png" type="Texture" id=6]
+[ext_resource path="res://assets/gui/quest_widget.png" type="Texture" id=5]
+[ext_resource path="res://gui/hud/BigRedButton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://gui/hud/quest_widget.gd" type="Script" id=7]
-[ext_resource path="res://assets/fonts/m5x7.tres" type="DynamicFont" id=8]
+[ext_resource path="res://gui/hud/QuestBox.tscn" type="PackedScene" id=8]
 [ext_resource path="res://themes/menu_theme/menu_theme.tres" type="Theme" id=9]
-
-[sub_resource type="StyleBoxEmpty" id=1]
 
 [node name="QuestWidget" type="Control"]
 anchor_right = 1.0
@@ -34,79 +32,73 @@ margin_right = 128.0
 margin_bottom = 75.0
 texture = ExtResource( 5 )
 
-[node name="SocialRoundel" type="TextureRect" parent="TextureRect"]
-margin_left = 126.0
-margin_top = 42.0
-margin_right = 150.0
-margin_bottom = 66.0
+[node name="BigRedButton" parent="TextureRect" instance=ExtResource( 6 )]
+anchor_left = 0.890625
+anchor_top = 0.186667
+anchor_right = 0.890625
+anchor_bottom = 0.186667
+
+[node name="QuestBoxes" type="Control" parent="TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+
+[node name="StudyBox" parent="TextureRect/QuestBoxes" instance=ExtResource( 8 )]
+margin_left = -57.0
+margin_top = -6.0
+margin_right = -57.0
+margin_bottom = -6.0
+
+[node name="SocialInfo" parent="TextureRect/QuestBoxes" instance=ExtResource( 8 )]
+margin_left = 57.0
+margin_top = -6.0
+margin_right = 57.0
+margin_bottom = -6.0
+
+[node name="PersonalInfo" parent="TextureRect/QuestBoxes" instance=ExtResource( 8 )]
+margin_left = -57.0
+margin_top = 37.0
+margin_right = -57.0
+margin_bottom = 37.0
+
+[node name="FutureInfo" parent="TextureRect/QuestBoxes" instance=ExtResource( 8 )]
+margin_left = 57.0
+margin_top = 37.0
+margin_right = 57.0
+margin_bottom = 37.0
+
+[node name="StudyRoundel" type="TextureRect" parent="TextureRect/QuestBoxes"]
+margin_left = -115.0
+margin_top = -28.0
+margin_right = -91.0
+margin_bottom = -4.0
+hint_tooltip = "Study quests"
+texture = ExtResource( 1 )
+
+[node name="SocialRoundel" type="TextureRect" parent="TextureRect/QuestBoxes"]
+margin_left = -1.0
+margin_top = -28.0
+margin_right = 23.0
+margin_bottom = -4.0
 rect_pivot_offset = Vector2( -91, -41 )
 hint_tooltip = "Social quests"
 texture = ExtResource( 3 )
 
-[node name="PersonalRoundel" type="TextureRect" parent="TextureRect"]
-margin_left = 14.0
-margin_top = 87.0
-margin_right = 38.0
-margin_bottom = 111.0
+[node name="PersonalRoundel" type="TextureRect" parent="TextureRect/QuestBoxes"]
+margin_left = -115.0
+margin_top = 15.0
+margin_right = -91.0
+margin_bottom = 39.0
 hint_tooltip = "Personal quests"
 texture = ExtResource( 4 )
 
-[node name="StudyRoundel" type="TextureRect" parent="TextureRect"]
-margin_left = 14.0
-margin_top = 45.0
-margin_right = 38.0
-margin_bottom = 69.0
-hint_tooltip = "Study quests"
-texture = ExtResource( 1 )
-
-[node name="FutureRoundel" type="TextureRect" parent="TextureRect"]
-margin_left = 126.0
-margin_top = 87.0
-margin_right = 150.0
-margin_bottom = 111.0
+[node name="FutureRoundel" type="TextureRect" parent="TextureRect/QuestBoxes"]
+margin_left = -1.0
+margin_top = 15.0
+margin_right = 23.0
+margin_bottom = 39.0
 hint_tooltip = "Future Ready quests"
 texture = ExtResource( 2 )
-
-[node name="BigRedButton" type="TextureButton" parent="TextureRect"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 94.0
-margin_top = -60.0
-margin_right = 112.0
-margin_bottom = -42.0
-texture_normal = ExtResource( 6 )
-
-[node name="QuestInfos" type="Control" parent="TextureRect"]
-
-[node name="StudyInfo" type="Control" parent="TextureRect/QuestInfos"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-
-[node name="QuestName" type="Label" parent="TextureRect/QuestInfos/StudyInfo"]
-margin_left = 40.0
-margin_top = 49.0
-margin_right = 126.0
-margin_bottom = 77.0
-theme = ExtResource( 9 )
-custom_fonts/font = ExtResource( 8 )
-custom_styles/normal = SubResource( 1 )
-text = "Feeg the crackheads"
-autowrap = true
-clip_text = true
-
-[node name="Location" type="Label" parent="TextureRect/QuestInfos/StudyInfo"]
-margin_left = 27.0
-margin_top = 71.0
-margin_right = 119.0
-margin_bottom = 85.0
-theme = ExtResource( 9 )
-custom_fonts/font = ExtResource( 8 )
-custom_styles/normal = SubResource( 1 )
-text = "Location: Inside"
-clip_text = true
 
 [connection signal="pressed" from="TextureRect/BigRedButton" to="." method="_on_BigRedButton_pressed"]

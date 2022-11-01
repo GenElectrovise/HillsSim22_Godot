@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/quest_box.png-09a39ff0de01aa1e4026fdd661b60cc5.stex"
+path="res://.import/big_red_button_normal.png-8a83415803b42cc4db6d3d00bb5d23df.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gui/quest_box.png"
-dest_files=[ "res://.import/quest_box.png-09a39ff0de01aa1e4026fdd661b60cc5.stex" ]
+source_file="res://assets/gui/big_red_button_normal.png"
+dest_files=[ "res://.import/big_red_button_normal.png-8a83415803b42cc4db6d3d00bb5d23df.stex" ]
 
 [params]
 
