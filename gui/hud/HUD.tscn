@@ -18,12 +18,12 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 0.0
 margin_top = 0.0
-margin_right = 268.0
-margin_bottom = 162.0
+margin_right = 256.0
+margin_bottom = 150.0
 
 [node name="Menus" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 
 [node name="QuestsWidget" parent="Menus" instance=ExtResource( 3 )]
 
