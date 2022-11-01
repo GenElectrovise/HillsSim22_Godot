@@ -2,10 +2,14 @@ extends Node2D
 
 class_name Quest
 
+var QuestName = "?"
+var QuestLocation = "?"
+
 var stage
 var is_started
 var objectives = []
 var quest_id
+var quest_type
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,8 +25,13 @@ func current() -> Objective:
 	return objectives[stage]
 
 func _start():
-	assert(!is_started, str("Quest ", quest_id, " cannot be started twice!"))
-	print("Starting quest ", quest_id)
+	if is_started:
+		print("Quest ", quest_id, " cannot be started again!")
+		return
+	is_started = true
+	
+	print("Starting quest ", quest_id, ":", quest_type)
+	QuestManager.increment_index(quest_type)
 	stage = 0
 	current()._start()
 	pass

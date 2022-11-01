@@ -4,6 +4,11 @@ class_name WatchBirdsQuest
 #export(String) var tp_destination_level = $Teleporter.destination_level
 #export(Vector2) var tp_destination_position = $Teleporter.destination_position
 
+func _init(quest_type_in):
+	QuestName = "Watch Birds"
+	QuestLocation = "The Quad"
+	quest_type = quest_type_in
+
 func _on_Area2D_area_entered(area):
 	pass # Replace with function body.
 

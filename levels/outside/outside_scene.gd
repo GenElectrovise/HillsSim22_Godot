@@ -8,7 +8,9 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	QuestManager.start_quest(WatchBirdsQuest.new())
+	var quest = QuestManager.register_quest(WatchBirdsQuest.new(QuestManager.QuestTypes.PERSONAL), QuestManager.QuestTypes.PERSONAL)
+	quest._start()
+	
 	GUI.HUD.visible = true
 	pass # Replace with function body.
 

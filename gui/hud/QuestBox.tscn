@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/fonts/m5x7.tres" type="DynamicFont" id=1]
 [ext_resource path="res://themes/menu_theme/menu_theme.tres" type="Theme" id=2]
 [ext_resource path="res://assets/gui/quest_box.png" type="Texture" id=5]
+[ext_resource path="res://gui/hud/quest_box.gd" type="Script" id=7]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -11,6 +12,7 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+script = ExtResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 5 )
@@ -23,17 +25,17 @@ margin_bottom = 11.0
 theme = ExtResource( 2 )
 custom_fonts/font = ExtResource( 1 )
 custom_styles/normal = SubResource( 1 )
-text = "Feeg the crackheads"
+text = "Feeding the crackheads"
 autowrap = true
 clip_text = true
 
-[node name="Location" type="Label" parent="."]
-margin_left = -38.0
+[node name="QuestLocation" type="Label" parent="."]
+margin_left = -49.0
 margin_top = 5.0
-margin_right = 54.0
+margin_right = 52.0
 margin_bottom = 19.0
 theme = ExtResource( 2 )
 custom_fonts/font = ExtResource( 1 )
 custom_styles/normal = SubResource( 1 )
-text = "Location: Inside"
+text = "Location: The Quad"
 clip_text = true
