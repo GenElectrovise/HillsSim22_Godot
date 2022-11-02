@@ -88,8 +88,8 @@ GUI="*res://gui/GUI.tscn"
 
 [display]
 
-window/size/width=256
-window/size/height=150
+window/size/width=384
+window/size/height=225
 window/size/test_width=1024
 window/size/test_height=600
 window/tablet_driver=""
