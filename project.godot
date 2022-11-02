@@ -34,10 +34,15 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://quests/quest.gd"
 }, {
-"base": "Control",
-"class": "QuestsWidget",
+"base": "VBoxContainer",
+"class": "QuestsInfo",
 "language": "GDScript",
-"path": "res://gui/hud/quest_widget.gd"
+"path": "res://gui/hud/quests_info.gd"
+}, {
+"base": "Control",
+"class": "QuestsWidget_old",
+"language": "GDScript",
+"path": "res://gui/hud/old/quest_widget_old.gd"
 }, {
 "base": "Node2D",
 "class": "Teleporter",
@@ -65,7 +70,8 @@ _global_script_class_icons={
 "Objective": "",
 "Player": "",
 "Quest": "",
-"QuestsWidget": "",
+"QuestsInfo": "",
+"QuestsWidget_old": "",
 "Teleporter": "",
 "TitleScreen": "",
 "WatchBirdsObjective": "",
@@ -105,6 +111,7 @@ version_control_plugin_name="GitAPI"
 
 allow=false
 main=false
+anti=false
 
 [gui]
 
