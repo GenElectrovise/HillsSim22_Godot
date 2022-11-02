@@ -16,23 +16,14 @@ func close_menu():
 
 func show_quests(show: bool):
 	if show:
-		print("Showing quests")
 		Items.visible = false
 		Menus.visible = true
 		QuestsWidget.visible = true
 	else:
-		print("Hiding quests")
 		Items.visible = true
 		Menus.visible = false
 		QuestsWidget.visible = false
 
 func _on_QuestsButton_button_up():
-	print("_on_QuestsButton_button_up!")
 	show_quests(true)
 	pass 
-
-
-func _on_QuestsButton_pressed():
-	print("_on_QuestsButton_pressed!")
-	show_quests(true)
-	pass # Replace with function body.

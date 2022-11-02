@@ -9,7 +9,6 @@ var paused = false setget set_paused
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("Pause ready")
 	set_paused(false)
 	pass
 

@@ -114,3 +114,6 @@ func get_running_quests(quest_type):
 		if(!quest.is_complete):
 			running.append(quest)
 	return running
+
+func id_str(quest_type, quest_id, obj_id ):
+	return str(quest_type, ":", quest_id, ":", obj_id)

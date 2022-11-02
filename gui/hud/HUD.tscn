@@ -28,4 +28,3 @@ anchor_bottom = 1.0
 [node name="QuestsWidget" parent="Menus" instance=ExtResource( 3 )]
 
 [connection signal="button_up" from="Items/QuestsButton" to="." method="_on_QuestsButton_button_up"]
-[connection signal="pressed" from="Items/QuestsButton" to="." method="_on_QuestsButton_pressed"]

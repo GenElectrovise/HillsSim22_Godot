@@ -1,11 +1,11 @@
-extends Node2D
+extends Node
 
 class_name Quest
 
-var QuestName = "?"
-var QuestLocation = "?"
+export var QuestName = "?"
+export var QuestDescription = "..."
 
-var stage
+var stage setget set_stage
 var is_started
 var objectives = []
 var quest_id
@@ -18,8 +18,9 @@ func _ready():
 func add_objective(objective):
 	if(objective is Objective):
 		objectives.append(objective)
-		objective.quest_id = quest_id
+		objective.quest = self
 		objective.obj_id = objectives.size() - 1
+		print("Added Objective ", objective.get_id(), " to Quest ", get_id())
 
 func current() -> Objective:
 	return objectives[stage]
@@ -29,12 +30,16 @@ func _start():
 		print("Quest ", quest_id, " cannot be started again!")
 		return
 	is_started = true
-	
-	print("Starting quest ", quest_id, ":", quest_type)
+	print("Starting Quest ", get_id())
 	QuestManager.increment_index(quest_type)
-	stage = 0
-	current()._start()
-	pass
+	self.stage = 0
+
+func get_id() -> String:
+	return str(quest_type, ":", quest_id)
+
+func set_stage(s: int):
+	print("Changing Quest ", get_id(), " stage ", stage, " -> ", s)
+	stage = s
 
 func _finish():
 	pass
