@@ -23,15 +23,15 @@ func refresh_text():
 	var personal_quest = QuestManager.get_quest(QuestManager.personal_index, QuestManager.QuestTypes.PERSONAL)
 	var future_quest = QuestManager.get_quest(QuestManager.future_index, QuestManager.QuestTypes.FUTURE)
 	
-	var study_name = study_quest.QuestName if study_quest != null else "-"
-	var social_name = social_quest.QuestName if social_quest != null else "-"
-	var personal_name = personal_quest.QuestName if personal_quest != null else "-"
-	var future_name = future_quest.QuestName if future_quest != null else "-"
+	var study_name = study_quest.current().ObjectiveName if study_quest != null else "-"
+	var social_name = social_quest.current().ObjectiveName if social_quest != null else "-"
+	var personal_name = personal_quest.current().ObjectiveName if personal_quest != null else "-"
+	var future_name = future_quest.current().ObjectiveName if future_quest != null else "-"
 	
-	var study_loc = str("Location: ", study_quest.QuestLocation) if study_quest != null else " "
-	var social_loc = str("Location: ", social_quest.QuestLocation) if social_quest != null else " "
-	var personal_loc = str("Location: ", personal_quest.QuestLocation) if personal_quest != null else " "
-	var future_loc = str("Location: ", future_quest.QuestLocation) if future_quest != null else " "
+	var study_loc = str("Location: ", study_quest.current().ObjectiveLocation) if study_quest != null else " "
+	var social_loc = str("Location: ", social_quest.current().ObjectiveLocation) if social_quest != null else " "
+	var personal_loc = str("Location: ", personal_quest.current().ObjectiveLocation) if personal_quest != null else " "
+	var future_loc = str("Location: ", future_quest.current().ObjectiveLocation) if future_quest != null else " "
 	
 	StudyBox.QuestName.text = study_name
 	SocialBox.QuestName.text = social_name

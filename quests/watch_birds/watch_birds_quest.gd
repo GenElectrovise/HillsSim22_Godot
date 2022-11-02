@@ -5,7 +5,7 @@ class_name WatchBirdsQuest
 #export(Vector2) var tp_destination_position = $Teleporter.destination_position
 
 func _init(quest_type_in):
-	QuestName = "Watch Birds"
+	QuestName = "Watch Bird"
 	QuestLocation = "The Quad"
 	quest_type = quest_type_in
 
