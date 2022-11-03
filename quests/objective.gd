@@ -1,5 +1,7 @@
 extends Node2D
 
+
+
 class_name Objective
 
 export var ObjectiveDescription: String = "?"
@@ -30,14 +32,10 @@ func __start_o__():
 	pass
 
 # Clean-up the objective, for example removing spawned NPCs
-func __finish_o__():
-	if finished:
-		push_error(str("Objective ", get_id(), " should not be finished again!"))
-	finished = true
-	print("Finishing Objective ", get_id())
-	if quest.current() != self:
-		push_error(str("Objective ", get_id(), " is trying to finish out of turn!"))
-	quest.__refresh_objectives__()
+func __clean_o__():
+	if !finished:
+		push_error(str("Objective ", get_id(), " is being cleaned while not finished!"))
+	print("Cleaning Objective ", get_id())
 
 func get_id():
 	return str(quest.get_id() if quest != null else "?:?", ":", obj_id)

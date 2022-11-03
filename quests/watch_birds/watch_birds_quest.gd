@@ -30,8 +30,8 @@ func start_q():
 func finish_q():
 	.__finish_q__()
 
-func on_objective_finished():
-	.__on_objective_finished__()
+func check_objectives():
+	.__check_objectives__()
 
 # Custom #
 

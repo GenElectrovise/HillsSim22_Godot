@@ -5,6 +5,8 @@ class_name Quest
 export var QuestName = "?"
 export var QuestDescription = "..."
 
+const QUEST_GROUP = "quests"
+
 var stage: int = -1 setget set_stage
 var prepared: bool = false
 var started: bool = false
@@ -52,9 +54,17 @@ func __finish_q__():
 	finished = true
 	print("Finishing Quest ", get_id())
 
-func __refresh_objectives__():
-	if stage + 1 >= objectives.size():
-		 call("finish_q")
+func __check_objectives__():
+	var current = current()
+	if current.finished: # Finish off current quest
+		current.finish_o()
+	if stage + 1 < objectives.size(): # Start next objective
+		stage += 1
+		current().start_o()
+	else: # Report quest as finished
+		finished = true
+		QuestManager.check_quests()
+	pass
 
 # Util
 

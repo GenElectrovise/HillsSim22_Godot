@@ -24,13 +24,13 @@ func start_o():
 	nest.position = self.position
 	Global.CurrentScene.add_child(nest)
 
-func finish_o():
-	.__finish_o__()
+func clean_o():
+	.__clean_o__()
 	nest.free()
 
 # Custom #
 
 func _on_Area2D_area_entered(area):
 	quest.on_objective_finished()
-	finish_o()
+	clean_o()
 	pass
