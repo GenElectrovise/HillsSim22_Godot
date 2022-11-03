@@ -29,7 +29,8 @@ func current() -> Objective:
 		push_error(str("quest.stage out of bounds: ", stage, " vs max ", objectives.size() - 1))
 	if stage < 0:
 		push_error(str("quest.stage < 0 probably caused by incorrect stage tracking (not initialised?)"))
-	return objectives[stage]
+	var result = objectives[stage]
+	return result
 
 # Flow
 
@@ -47,7 +48,7 @@ func __start_q__():
 	started = true
 	print("Starting Quest ", get_id())
 
-func __finish_q__():
+func __clean_q__():
 	if finished:
 		push_error(str("Quest ", quest_id, " should not be finished again!"))
 		return
@@ -56,8 +57,8 @@ func __finish_q__():
 
 func __check_objectives__():
 	var current = current()
-	if current.finished: # Finish off current quest
-		current.finish_o()
+	if current.finished: # Finish off current objective
+		current.clean_o()
 	if stage + 1 < objectives.size(): # Start next objective
 		stage += 1
 		current().start_o()

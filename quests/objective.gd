@@ -1,16 +1,12 @@
-extends Node2D
-
-
-
-class_name Objective
+class_name Objective extends Node2D
 
 export var ObjectiveDescription: String = "?"
 export var ObjectiveLocation: String = "?"
 export var ObjectiveImage: Texture = load("res://assets/gui/exclamation_mark.png")
 
-var started: bool = false
-var prepared: bool = false
-var finished: bool = false
+var started: bool = false setget set_started, get_started
+var prepared: bool = false setget set_prepared, get_prepared
+var finished: bool = false setget set_finished, get_finished
 var quest
 var obj_id: int
 
@@ -40,3 +36,15 @@ func __clean_o__():
 func get_id():
 	return str(quest.get_id() if quest != null else "?:?", ":", obj_id)
 
+func set_started(s):
+	started = s
+func get_started():
+	return started
+func get_prepared():
+	return prepared
+func set_prepared(p):
+	prepared = p
+func get_finished():
+	return finished
+func set_finished(f):
+	finished = f
