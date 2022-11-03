@@ -2,12 +2,15 @@ extends KinematicBody2D
 
 class_name Player
 
-var velocity : Vector2 = Vector2()
 const reach = 10
-onready var COSTUME: Costume = $Costume
-var direction = Direction.SOUTH
-
 const POINTER_ARROW = preload("res://entities/pointer_arrow/pointer_arrow.tscn")
+
+onready var COSTUME: Costume = $Costume
+
+var velocity : Vector2 = Vector2()
+var direction = Direction.SOUTH
+var movement_enabled = true setget set_movement_enabled
+var interaction_enabled = true setget set_interaction_enabled
 
 enum Direction {
 	NORTH, SOUTH, EAST, WEST
@@ -23,6 +26,8 @@ func handle_input():
 	handle_interaction_input()
 
 func handle_movement_input():
+	if !movement_enabled:
+		return
 	velocity = Vector2.ZERO
 	if(Input.is_action_pressed("player_north")):
 		velocity.y -= 1
@@ -36,6 +41,8 @@ func handle_movement_input():
 	velocity = move_and_slide(velocity * 100)
 
 func handle_interaction_input():
+	if !interaction_enabled:
+		return
 	if(Input.is_action_just_pressed("player_interact")):
 		print("Trying to interact")
 		attempt_interact()
@@ -44,7 +51,7 @@ func look_at_mouse():
 	look_at(get_global_mouse_position())
 	rotation_degrees = rotation_degrees + 90
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	handle_input()
 	# look_at_mouse()
 
@@ -56,3 +63,11 @@ func attempt_interact():
 		
 func regenerate_from_player_data():
 	PlayerData.regenerate(self)
+
+func set_movement_enabled(enabled: bool):
+	print("movement_enabled: ", enabled)
+	movement_enabled = enabled
+
+func set_interaction_enabled(enabled: bool):
+	print("interaction_enabled: ", enabled)
+	interaction_enabled = enabled

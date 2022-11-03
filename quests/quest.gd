@@ -5,15 +5,15 @@ class_name Quest
 export var QuestName = "?"
 export var QuestDescription = "..."
 
-var stage setget set_stage
-var is_started
+var stage: int = -1 setget set_stage
+var prepared: bool = false
+var started: bool = false
+var finished: bool = false
 var objectives = []
 var quest_id
 var quest_type
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+# Objectives
 
 func add_objective(objective):
 	if(objective is Objective):
@@ -23,16 +23,40 @@ func add_objective(objective):
 		print("Added Objective ", objective.get_id(), " to Quest ", get_id())
 
 func current() -> Objective:
+	if stage > objectives.size() - 1:
+		push_error(str("quest.stage out of bounds: ", stage, " vs max ", objectives.size() - 1))
+	if stage < 0:
+		push_error(str("quest.stage < 0 probably caused by incorrect stage tracking (not initialised?)"))
 	return objectives[stage]
 
-func _start():
-	if is_started:
-		print("Quest ", quest_id, " cannot be started again!")
+# Flow
+
+func __prepare_q__(): 
+	if prepared:
+		push_error(str("Quest ", quest_id, " should not be prepared again!"))
 		return
-	is_started = true
+	prepared = true
+	print("Preparing Quest ", get_id())
+
+func __start_q__():
+	if started:
+		push_error(str("Quest ", quest_id, " should not be started again!"))
+		return
+	started = true
 	print("Starting Quest ", get_id())
-	QuestManager.increment_index(quest_type)
-	self.stage = 0
+
+func __finish_q__():
+	if finished:
+		push_error(str("Quest ", quest_id, " should not be finished again!"))
+		return
+	finished = true
+	print("Finishing Quest ", get_id())
+
+func __refresh_objectives__():
+	if stage + 1 >= objectives.size():
+		 call("finish_q")
+
+# Util
 
 func get_id() -> String:
 	return str(quest_type, ":", quest_id)
@@ -40,6 +64,3 @@ func get_id() -> String:
 func set_stage(s: int):
 	print("Changing Quest ", get_id(), " stage ", stage, " -> ", s)
 	stage = s
-
-func _finish():
-	pass

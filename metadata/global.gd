@@ -3,6 +3,9 @@ extends Node
 onready var CurrentScene = null
 var random = RandomNumberGenerator.new()
 
+func _init():
+	random.randomize()
+
 func _ready():
 	var root = get_tree().get_root()
 	CurrentScene = root.get_child(root.get_child_count() - 1)
