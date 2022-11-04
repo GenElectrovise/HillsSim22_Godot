@@ -4,11 +4,10 @@ export var ObjectiveDescription: String = "?"
 export var ObjectiveLocation: String = "?"
 export var ObjectiveImage: Texture = load("res://assets/gui/exclamation_mark.png")
 
-var started: bool = false setget set_started, get_started
-var prepared: bool = false setget set_prepared, get_prepared
-var finished: bool = false setget set_finished, get_finished
-var quest
-var obj_id: int
+export var started: bool = false setget set_started, get_started
+export var prepared: bool = false setget set_prepared, get_prepared
+export var finished: bool = false setget set_finished, get_finished
+export var obj_id: int
 
 # Set up things which the objective needs, such as a location, without starting the objective
 # Done when added to a Quest 
@@ -34,7 +33,7 @@ func __clean_o__():
 	print("Cleaning Objective ", get_id())
 
 func get_id():
-	return str(quest.get_id() if quest != null else "?:?", ":", obj_id)
+	return str(get_parent().get_id() if get_parent() != null else "?:?", ":", obj_id)
 
 func set_started(s):
 	started = s

@@ -1,35 +1,34 @@
-extends Node
-
-class_name Quest
+class_name Quest extends Node
 
 export var QuestName = "?"
 export var QuestDescription = "..."
 
-const QUEST_GROUP = "quests"
+export var stage: int = -1 setget set_stage
+export var prepared: bool = false
+export var started: bool = false
+export var finished: bool = false
+export var quest_id: int = -1
+export var quest_type: int = -1
 
-var stage: int = -1 setget set_stage
-var prepared: bool = false
-var started: bool = false
-var finished: bool = false
-var objectives = []
-var quest_id
-var quest_type
+func _init():
+	print(get_children())
 
 # Objectives
 
 func add_objective(objective):
+	print("Adding Objective ", objective.get_id(), " to Quest ", get_id(), " at ", self)
 	if(objective is Objective):
-		objectives.append(objective)
-		objective.quest = self
-		objective.obj_id = objectives.size() - 1
+		add_child(objective)
+		objective.obj_id = get_child_count() - 1
 		print("Added Objective ", objective.get_id(), " to Quest ", get_id())
+		print("children ", get_children())
 
 func current() -> Objective:
-	if stage > objectives.size() - 1:
-		push_error(str("quest.stage out of bounds: ", stage, " vs max ", objectives.size() - 1))
+	if stage > get_child_count() - 1:
+		push_error(str("quest.stage out of bounds: ", stage, " vs max ", get_child_count() - 1))
 	if stage < 0:
 		push_error(str("quest.stage < 0 probably caused by incorrect stage tracking (not initialised?)"))
-	var result = objectives[stage]
+	var result = get_child(stage)
 	return result
 
 # Flow
@@ -59,7 +58,7 @@ func __check_objectives__():
 	var current = current()
 	if current.finished: # Finish off current objective
 		current.clean_o()
-	if stage + 1 < objectives.size(): # Start next objective
+	if stage + 1 < get_child_count(): # Start next objective
 		stage += 1
 		current().start_o()
 	else: # Report quest as finished

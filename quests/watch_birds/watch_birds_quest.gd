@@ -26,7 +26,8 @@ func prepare_q():
 func start_q():
 	.__start_q__()
 	stage = 0
-	QuestManager.increment_index(quest_type)
+	print("Remember to increment the index!! Objective#29")
+	QuestManager.study_index += 1
 	current().start_o()
 
 func clean_q():
