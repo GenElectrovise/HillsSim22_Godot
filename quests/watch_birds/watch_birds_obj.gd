@@ -37,6 +37,10 @@ func clean_o():
 	.__clean_o__()
 	nest.free()
 
+func _physics_process(delta):
+	if Input.is_action_just_pressed("debug"):
+		finish()
+
 func finish():
 	print(self, " has finished as ", get_id())
 	print("FINISHING OBJECTIVE ", get_id())

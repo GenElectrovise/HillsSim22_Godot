@@ -44,7 +44,11 @@ func check_quests():
 	print("check_quests()")
 	QuestManager.dump()
 	for set in QuestGroups.get_children():
-		var q = set.get_child(set.index)
+		var q = StudySet.get_child(0)
+		continue
+		
+		### OOPS!
+		q = set.get_child(set.index)
 		if (q != null) & (q is Quest) && (q.finished):
 			print("Cleaning quest ", q.get_id())
 			set.index += 1
