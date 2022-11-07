@@ -1,10 +1,5 @@
 extends Control
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 var paused = false setget set_paused
 
 # Called when the node enters the scene tree for the first time.
@@ -18,7 +13,7 @@ func _unhandled_input(event):
 			self.paused = !paused
 
 func set_paused(pause: bool):
-	print("Paused: ", pause)
+	print("Game paused: ", pause)
 	paused = pause
 	get_tree().paused = paused
 	visible = paused

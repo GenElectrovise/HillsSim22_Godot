@@ -1,0 +1,35 @@
+[gd_resource type="Shader" format=2]
+
+[resource]
+code = "shader_type canvas_item;
+
+uniform float temperature: hint_range(-1,1);
+uniform vec4 hot_colour: hint_color;
+uniform vec4 cold_colour: hint_color;
+
+uniform float blend: hint_range(0.0,1.0);
+
+// Returns the temperature colour multiplied by 0.333 * (temp)^6
+vec4 exponentiate_temperature(vec4 tempColor, float temp) {
+	clamp(temp, -1, 1);
+	float mul = pow(abs(temp), 6.0);
+	return tempColor * (1.0/1.5) * mul;
+}
+
+
+vec4 get_temperature_colour() {
+	clamp(temperature, -1, 1);
+	if (temperature >= 0.0) {
+		return exponentiate_temperature(hot_colour, temperature);
+	} else {
+		return exponentiate_temperature(cold_colour, temperature);
+	}
+}
+
+void fragment() {
+		
+	vec4 pixelColour = texture(TEXTURE, UV);
+	COLOR = mix(pixelColour, get_temperature_colour(), blend);
+}
+
+"

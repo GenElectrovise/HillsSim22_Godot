@@ -85,6 +85,7 @@ QuestManager="*res://metadata/QuestManager.tscn"
 PlayerData="*res://metadata/player_data.gd"
 Levels="*res://levels/levels.gd"
 GUI="*res://gui/GUI.tscn"
+Clock="*res://metadata/Clock.tscn"
 
 [display]
 
@@ -106,6 +107,7 @@ version_control_plugin_name="GitAPI"
 allow=false
 main=false
 anti=false
+scene=false
 
 [gui]
 

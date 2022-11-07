@@ -1,10 +1,5 @@
 extends Node
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 onready var HUD: HUD = $Base/HUD
 onready var Pause = $Base/Pause
 
