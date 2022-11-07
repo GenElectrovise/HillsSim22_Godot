@@ -62,5 +62,5 @@ current = true
 [node name="Light2D" parent="." instance=ExtResource( 5 )]
 position = Vector2( 76, 47 )
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.784314, 0.784314, 0.784314, 1 )
+[node name="Modulate" type="CanvasModulate" parent="."]
+color = Color( 0.109804, 0.188235, 0.435294, 1 )

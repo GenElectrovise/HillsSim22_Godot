@@ -1,6 +1,10 @@
 extends Node2D
 
 onready var Map: TileMap = $TileMap
+onready var Modulate: CanvasModulate = $Modulate
+
+export var DAY_COLOUR: Color = Color.white
+export var NIGHT_COLOUR: Color = Color(0,0,153/255, 1)
 
 var time: float = 0
 
@@ -22,6 +26,13 @@ func _ready():
 func _physics_process(delta):
 	time += delta
 	Map.material.set_shader_param("temperature", WeatherManager.get_temperature_noise());
+
+func _process(delta):
+	var blend = -cos(Clock.get_total_mins() * (2*PI)/(60 * 24))
+	var blend_m = 0.6 + (0.4 * blend)
+	Modulate.color = NIGHT_COLOUR.linear_interpolate(DAY_COLOUR, blend_m)
+	print(Modulate.color)
+	print(blend_m)
 
 func is_pausable():
 	return true
