@@ -2,5 +2,5 @@
 
 [ext_resource path="res://metadata/clock.gd" type="Script" id=1]
 
-[node name="Clock" type="Timer"]
+[node name="Clock" type="Node"]
 script = ExtResource( 1 )

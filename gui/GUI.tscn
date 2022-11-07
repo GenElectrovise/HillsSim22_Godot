@@ -13,6 +13,7 @@ script = ExtResource( 2 )
 [node name="Base" type="CanvasLayer" parent="."]
 
 [node name="SeasonalOverlay" type="ColorRect" parent="Base"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -22,3 +23,4 @@ script = ExtResource( 4 )
 [node name="HUD" parent="Base" instance=ExtResource( 3 )]
 
 [node name="Pause" parent="Base" instance=ExtResource( 1 )]
+visible = false

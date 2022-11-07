@@ -1,11 +1,15 @@
 extends Node
 
-var CurrentScene
+onready var CurrentScene = $CurrentScene
 var random: RandomNumberGenerator
+
+var SEED = 0
 
 func _init():
 	CurrentScene = null
 	random = RandomNumberGenerator.new()
+	SEED = random.randi()
+	random.seed = SEED
 	random.randomize()
 
 func _ready():

@@ -1,26 +1,42 @@
-extends Timer
+extends Node
 
-const SECONDS_PER_TICK: int = 3
+const DAYS_PER_REAL_MINUTE = 0.05 # 20 minutes per day
+const MINUTES_PER_REAL_SECOND: int = 3
+const accelerate = 50
 
-var time: int
+var paused: bool = true
 
-func _init():
-	print("Starting Clock")
-	prepare()
-	time = 0
-	pause(true)
-	
-func prepare():
-	connect("timeout", self, "tick")
-	wait_time = SECONDS_PER_TICK
-	one_shot = false
-	paused = false
-	start()
+var seconds: float = 0
+var minutes: int = 0
+var hours: int = 0
+var days: int = 0
 
 func pause(pause: bool):
 	print("Time paused: ", pause)
 	paused = pause
 
-func tick():
-	print("Ticking time ", time, " -> ", time + 1)
-	time += 1
+func _physics_process(delta):
+	if !paused:
+		increment_time(delta)
+
+func increment_time(delta):
+	seconds += delta * MINUTES_PER_REAL_SECOND * 60 * accelerate
+	
+	var m = floor(seconds / 60)
+	minutes += m
+	seconds -= m * 60
+	
+	var h = floor(minutes / 60)
+	hours += h
+	minutes -= h * 60
+	
+	var d = floor(hours / 24)
+	days += d
+	hours -= d * 24
+
+func get_formatted(): 
+	return "%02d:%02d:%02d:%02d" % [days, hours, minutes, seconds]
+
+func get_total_mins():
+	var total = minutes + (hours * 60) + (days * 60 * 24)
+	return total

@@ -35,7 +35,7 @@ func start_o():
 
 func clean_o():
 	.__clean_o__()
-	nest.free()
+	nest.queue_free()
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("debug"):

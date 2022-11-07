@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://levels/outside/outside_tiles.tres" type="TileSet" id=1]
-[ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://levels/outside/outside_tile_material.tres" type="Material" id=3]
 [ext_resource path="res://levels/outside/outside_scene.gd" type="Script" id=4]
+[ext_resource path="res://decorations/light/light.tscn" type="PackedScene" id=5]
 [ext_resource path="res://decorations/grass_medium.tscn" type="PackedScene" id=6]
 [ext_resource path="res://buildings/g_block.tscn" type="PackedScene" id=7]
 [ext_resource path="res://decorations/dead_tree.tscn" type="PackedScene" id=8]
@@ -57,3 +58,9 @@ position = Vector2( -13, 57 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
+
+[node name="Light2D" parent="." instance=ExtResource( 5 )]
+position = Vector2( 76, 47 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.784314, 0.784314, 0.784314, 1 )

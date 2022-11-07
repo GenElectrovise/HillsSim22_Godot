@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/decorations/light.png" type="Texture" id=1]
+[ext_resource path="res://assets/decorations/light_cast.png" type="Texture" id=2]
+
+[node name="Light2D" type="Light2D"]
+texture = ExtResource( 2 )
+color = Color( 1, 0.627451, 0, 1 )
+shadow_enabled = true
+shadow_color = Color( 0.105882, 0.0941176, 0.0941176, 0 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )

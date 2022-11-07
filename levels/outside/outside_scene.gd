@@ -21,7 +21,7 @@ func _ready():
 
 func _physics_process(delta):
 	time += delta
-	Map.material.set_shader_param("temperature", sin(time));
+	Map.material.set_shader_param("temperature", WeatherManager.get_temperature_noise());
 
 func is_pausable():
 	return true
