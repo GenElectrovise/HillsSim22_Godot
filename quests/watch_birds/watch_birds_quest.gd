@@ -14,7 +14,6 @@ func _init(quest_type_in):
 	QuestName = "Birdwatching"
 	QuestDescription = "Stare intently at some birds."
 	quest_type = quest_type_in
-	print(self, " is ", get_id())
 
 # Inherited #
 
@@ -25,8 +24,7 @@ func prepare_q():
 func start_q():
 	.__start_q__()
 	stage = 0
-	print("Remember to increment the index!! WatchBirdsQuest#29")
-	QuestManager.study_index += 1
+	QuestManager.study_index = quest_id
 	current().start_o()
 
 func clean_q():
