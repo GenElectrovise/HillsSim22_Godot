@@ -27,9 +27,8 @@ vec4 get_temperature_colour() {
 }
 
 void fragment() {
-		
-	vec4 pixelColour = texture(TEXTURE, UV);
-	COLOR = mix(pixelColour, get_temperature_colour(), blend);
+	//vec4 pixelColour = texture(TEXTURE, UV);
+	//COLOR = mix(pixelColour, get_temperature_colour(), blend);
 }
 
 "

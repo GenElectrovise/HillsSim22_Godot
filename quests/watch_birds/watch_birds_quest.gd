@@ -6,9 +6,8 @@ class_name WatchBirdsQuest
 
 var possible_locations = [
 	Vector2(30,30),
-	Vector2(30,30),
-	Vector2(30,30),
-	Vector2(30,30)
+	Vector2(30,60),
+	Vector2(30,90)
 ]
 
 func _init(quest_type_in):
@@ -26,7 +25,7 @@ func prepare_q():
 func start_q():
 	.__start_q__()
 	stage = 0
-	print("Remember to increment the index!! Objective#29")
+	print("Remember to increment the index!! WatchBirdsQuest#29")
 	QuestManager.study_index += 1
 	current().start_o()
 

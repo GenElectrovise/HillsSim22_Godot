@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Sprite",
+"class": "BirdsNest",
+"language": "GDScript",
+"path": "res://quests/watch_birds/birds_nest.gd"
+}, {
 "base": "Node2D",
 "class": "Costume",
 "language": "GDScript",
@@ -65,6 +70,7 @@ _global_script_classes=[ {
 "path": "res://quests/watch_birds/watch_birds_quest.gd"
 } ]
 _global_script_class_icons={
+"BirdsNest": "",
 "Costume": "",
 "CostumePart": "",
 "HUD": "",

@@ -5,7 +5,7 @@ class_name Player
 const reach = 10
 const POINTER_ARROW = preload("res://entities/pointer_arrow/pointer_arrow.tscn")
 
-onready var COSTUME: Costume = $Costume
+onready var COSTUME: Costume = $PlayerCostume
 
 var velocity : Vector2 = Vector2()
 var direction = Direction.SOUTH

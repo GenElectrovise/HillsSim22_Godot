@@ -31,8 +31,8 @@ func _process(delta):
 	var blend = -cos(Clock.get_total_mins() * (2*PI)/(60 * 24))
 	var blend_m = 0.6 + (0.4 * blend)
 	Modulate.color = NIGHT_COLOUR.linear_interpolate(DAY_COLOUR, blend_m)
-	print(Modulate.color)
-	print(blend_m)
+	#print(Modulate.color)
+	#print(blend_m)
 
 func is_pausable():
 	return true

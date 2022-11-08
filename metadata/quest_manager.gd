@@ -31,31 +31,28 @@ enum QuestTypes {
 # Flow #
 
 func notify_quests_objective_completed():
-	print("notify_quests_objective_completed()")
-	QuestManager.dump()
 	for set in QuestGroups.get_children():
 		for q in set.get_children():
 			if q is Quest:
 				q.check_objectives()
-	print("//notify_quests_objective_completed()")
-	QuestManager.dump()
 
 func check_quests():
-	print("check_quests()")
-	QuestManager.dump()
-	for set in QuestGroups.get_children():
-		var q = StudySet.get_child(0)
-		continue
-		
-		### OOPS!
-		q = set.get_child(set.index)
-		if (q != null) & (q is Quest) && (q.finished):
-			print("Cleaning quest ", q.get_id())
-			set.index += 1
-			q.clean_q()
-	
-	print("//check_quests()")
-	QuestManager.dump()
+	for so in SocialSet.get_children():
+		if (so != null) && (so is Quest) && (so.finished):
+			so.clean_q()
+			social_index += 1
+	for st in StudySet.get_children():
+		if (st != null) && (st is Quest) && (st.finished):
+			st.clean_q()
+			study_index += 1
+	for pe in PersonalSet.get_children():
+		if (pe != null) && (pe is Quest) && (pe.finished):
+			pe.clean_q()
+			personal_index += 1
+	for fu in FutureSet.get_children():
+		if (fu != null) && (fu is Quest) && (fu.finished):
+			fu.clean_q()
+			future_index += 1
 
 #
 

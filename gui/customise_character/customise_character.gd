@@ -7,5 +7,6 @@ func _ready():
 	pass 
 
 func _on_StartButton_pressed():
-	Global.switch_scene(Levels.lookup("outside"))
+	#Global.switch_scene(Levels.lookup("outside"))
+	get_tree().change_scene("res://levels/outside/outside_scene.tscn")
 	pass 

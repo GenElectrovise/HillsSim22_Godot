@@ -17,8 +17,10 @@ func _ready():
 	CurrentScene = root.get_child(root.get_child_count() - 1)#
 
 func is_pausable() -> bool:
-	if CurrentScene.has_method("is_pausable"):
-		return CurrentScene.is_pausable()
+	#if CurrentScene.has_method("is_pausable"):
+	#	return CurrentScene.is_pausable()
+	if get_tree().current_scene.has_method("is_pausable"):
+		return get_tree().current_scene.is_pausable()
 	return false
 
 func switch_scene(path):
