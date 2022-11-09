@@ -1,24 +1,9 @@
 extends Node
 
-# The flow of quests is as follows:
-# 1) Quests are created and added to their appropriate lists
-#	Each quests is told to prepare_q
-# 2) When an objective is added to a quest prepare_o should be called. 
-#	This is the time for the objective to prepare resources it will need.
-# 3) When it is time for the objective to begin, start_o is called
-#	The objective is now "active".
-# 4) When the objective knows it is finished, it marks finished=true and notifies the QuestManager that an objective has been completed
-#	The QuestManager tells all quests to check whether their current objective is complete.
-#	If the current objective has finished=true, it will be commanded to clean_o
-#	The quest will advance to the next objective.
-# 5) If the quest detects it is finished, it marks finished=true and notifies the QuestManager
-#	If the QuestManager is satisfied, the quest is finished/cleaned (I haven't decided yet)
+# A diagram for the flow of data within the Quest System can be 
+# found under '${project}/quests/Quest Flow.png'
 
-export var study_index = -1
-export var social_index = -1
-export var personal_index = -1
-export var future_index = -1
-
+const QUESTS_GRP: String = "quests"
 const STUDY_GRP: String = "study_quests"
 const SOCIAL_GRP: String = "social_quests"
 const PERSONAL_GRP: String = "personal_quests"
@@ -30,11 +15,31 @@ enum QuestTypes {
 
 ## Signals
 
-func s__on_quest_finished(quest_id):
+# Check every Quest
+# If finished, remove from quests and type_quests groups
+func s__on_quest_finished():
+	for quest in get_tree().get_nodes_in_group(QUESTS_GRP):
+		if quest.finished:
+			quest.i__clean()
 	pass
 
 ##
 
-func add_quest(quest):
-	quest.add_to_group(quest.type) ##
-	quest.connect()
+func add_quest(quest: Quest):
+	if quest.type != -1:
+		var qgn = get_quest_group_name(quest.type)
+		quest.add_to_group(QUESTS_GRP)
+		quest.add_to_group(qgn)
+		quest.connect("quest_finished", self, "s__on_quest_finished")
+
+func get_quest_group_name(type) -> String:
+	if type == QuestTypes.STUDY:
+		return STUDY_GRP
+	elif type == QuestTypes.SOCIAL:
+		return SOCIAL_GRP
+	elif type == QuestTypes.PERSONAL:
+		return PERSONAL_GRP
+	elif type == QuestTypes.FUTURE:
+		return FUTURE_GRP
+	else:
+		return "no_group_name"

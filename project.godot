@@ -29,7 +29,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://gui/hud/hud.gd"
 }, {
-"base": "Node2D",
+"base": "Node",
 "class": "Objective",
 "language": "GDScript",
 "path": "res://quests/objective.gd"

@@ -3,17 +3,16 @@ class_name WatchBirdsObjective extends Objective
 var BirdsNestScene = load("res://quests/watch_birds/BirdsNest.tscn")
 var BirdsNest: BirdsNest
 
+var position: Vector3 = Vector3.ZERO
+
 # Called when the node enters the scene tree for the first time.
-func _init():
+func _init(position: Vector3).():
 	ObjectiveDescription = "Watch birds"
 	ObjectiveLocation = "The Quad"
+	self.position = position
 	pass 
 
 # Inherited #
-
-func prepare_o(position: Vector2):
-	.__prepare_o__()
-	self.position = position
 
 func start_o():
 	.__start_o__()
