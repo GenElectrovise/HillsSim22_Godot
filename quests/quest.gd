@@ -13,15 +13,28 @@ export var quest_type: int = -1
 func _init():
 	print(get_children())
 
+
+## API
+
+signal quest_finished
+
+func s__on_objective_finished(obj_id):
+	pass
+
+func i__start_quest():
+	if !started:
+		start_next_objective()
+	pass
+
 # Objectives
 
 func add_objective(objective):
-	print("Adding Objective ", objective.get_id(), " to Quest ", get_id(), " at ", self)
 	if(objective is Objective):
 		add_child(objective)
 		objective.obj_id = get_child_count() - 1
 		print("Added Objective ", objective.get_id(), " to Quest ", get_id())
-		print("children ", get_children())
+		return
+	print("Failed to add Objective ", objective, " to Quest ", get_id())
 
 func current() -> Objective:
 	if stage > get_child_count() - 1:
@@ -32,13 +45,6 @@ func current() -> Objective:
 	return result
 
 # Flow
-
-func __prepare_q__(): 
-	if prepared:
-		push_error(str("Quest ", quest_id, " should not be prepared again!"))
-		return
-	prepared = true
-	print("Preparing Quest ", get_id())
 
 func __start_q__():
 	if started:

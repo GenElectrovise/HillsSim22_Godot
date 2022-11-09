@@ -9,6 +9,15 @@ export var prepared: bool = false setget set_prepared, get_prepared
 export var finished: bool = false setget set_finished, get_finished
 export var obj_id: int
 
+## API
+
+signal objective_finished
+
+func i__start_objective():
+	pass
+
+##
+
 # Set up things which the objective needs, such as a location, without starting the objective
 # Done when added to a Quest 
 func __prepare_o__():

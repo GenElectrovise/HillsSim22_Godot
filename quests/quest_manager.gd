@@ -14,27 +14,59 @@ extends Node
 # 5) If the quest detects it is finished, it marks finished=true and notifies the QuestManager
 #	If the QuestManager is satisfied, the quest is finished/cleaned (I haven't decided yet)
 
-onready var QuestGroups = $QuestGroups
-onready var StudySet = $QuestGroups/Study
-onready var SocialSet = $QuestGroups/Social
-onready var PersonalSet = $QuestGroups/Personal
-onready var FutureSet = $QuestGroups/Future
 export var study_index = -1
 export var social_index = -1
 export var personal_index = -1
 export var future_index = -1
 
+const STUDY_GRP: String = "study_quests"
+const SOCIAL_GRP: String = "social_quests"
+const PERSONAL_GRP: String = "personal_quests"
+const FUTURE_GRP: String = "future_quests"
+
 enum QuestTypes {
 	STUDY, SOCIAL, PERSONAL, FUTURE
 }
 
-# Flow #
+## API
 
-func notify_quests_objective_completed():
-	for set in QuestGroups.get_children():
-		for q in set.get_children():
-			if q is Quest:
-				q.check_objectives()
+func s__on_quest_finished(quest_id):
+	pass
+
+## Util
+
+func register_quest(quest: Quest, quest_type):
+	quest.set_meta("quest_type", quest_type)
+	quest.add_to_group(get_group_name(quest_type))
+	quest.connect("quest_finished", self, "s__on_quest_finished")
+
+
+func get_current(type) -> Quest:
+	return get_tree().get_nodes_in_group(get_group_name(type))[get_quest_index(type)]
+
+# Signal function
+# previously notify_quests_etc...
+func s__on_quest_completed(quest: Quest):
+	var type = quest.quest_type
+	var new_index = -1
+	match quest_type:
+		QuestTypes.STUDY:
+			study_index += 1
+			new_index = study_index
+		QuestTypes.SOCIAL:
+			social_index += 1
+			new_index = social_index
+		QuestTypes.PERSONAL:
+			personal_index += 1
+			new_index = personal_index
+		QuestTypes.FUTURE:
+			future_index += 1
+			new_index = future_index
+		_:
+			push_error(str("Cannot get_group_name for quest_type ", quest_type))
+	get_tree().call_group(get_group_name(type), "g__quest_in_group_completed")
+	get_tree().get_nodes_in_group(get_group_name(type))[new_index]. ## Start?
+
 
 func check_quests():
 	for so in SocialSet.get_children():
@@ -56,44 +88,36 @@ func check_quests():
 
 #
 
-func register_quest(quest: Quest, quest_type):
-	if(quest is Quest):
-		match quest_type:
-			QuestTypes.STUDY:
-				StudySet.add_child(quest)
-				quest.quest_id = StudySet.get_children().size() - 1
-				print("Registered quest ", quest, " id:", quest.quest_id, " type:", quest_type)
-			QuestTypes.SOCIAL:
-				SocialSet.add_child(quest)
-				quest.quest_id = SocialSet.get_children().size() - 1
-				print("Registered quest ", quest, " id:", quest.quest_id, " type:", quest_type)
-			QuestTypes.PERSONAL:
-				PersonalSet.add_child(quest)
-				quest.quest_id = PersonalSet.get_children().size() - 1
-				print("Registered quest ", quest, " id:", quest.quest_id, " type:", quest_type)
-			QuestTypes.FUTURE:
-				FutureSet.add_child(quest)
-				quest.quest_id = FutureSet.get_children().size() - 1
-				print("Registered quest ", quest, " id:", quest.quest_id, " type:", quest_type)
-			_:
-				quest.quest_id = -1000
-				print("Failed to register quest ", quest, " type:", quest_type, " quest:", quest)
+func get_group_name(quest_type) -> String:
+	match quest_type:
+		QuestTypes.STUDY:
+			return STUDY_GRP
+		QuestTypes.SOCIAL:
+			return SOCIAL_GRP
+		QuestTypes.PERSONAL:
+			return PERSONAL_GRP
+		QuestTypes.FUTURE:
+			return FUTURE_GRP
+		_:
+			push_error(str("Cannot get_group_name for quest_type ", quest_type))
+			return "no_group"
+
+func get_quest_index(quest_type) -> int:
+	match quest_type:
+		QuestTypes.STUDY:
+			return study_index
+		QuestTypes.SOCIAL:
+			return social_index
+		QuestTypes.PERSONAL:
+			return personal_index
+		QuestTypes.FUTURE:
+			return future_index
+		_:
+			push_error(str("Cannot get_group_name for quest_type ", quest_type))
+			return -99
 
 func id_str(quest_type, quest_id, obj_id ):
 	return str(quest_type, ":", quest_id, ":", obj_id)
-
-func get_current(type):
-	match type:
-		QuestTypes.STUDY, "study":
-			return StudySet.get_child(study_index)
-		QuestTypes.SOCIAL, "social":
-			return SocialSet.get_child(social_index)
-		QuestTypes.PERSONAL, "personal":
-			return PersonalSet.get_child(personal_index)
-		QuestTypes.FUTURE, "future":
-			return FutureSet.get_child(future_index)
-		_:
-			push_error(str("Unmatched get_current(type) ", type))
 
 func dump():
 	print("QuestManager dump():")
