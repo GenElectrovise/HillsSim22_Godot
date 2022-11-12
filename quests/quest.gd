@@ -14,8 +14,12 @@ var objective_group_name: String = str("quest_objectives_", Global.random.randf(
 signal quest_finished
 signal quest_started
 
+# Objective has called i__finish_objective
+# Signal 'objective_finished' has been emitted and recieved here
+# The objective has NOT been cleaned
 func s__on_objective_finished():
-	var remaining_objectives: int = get_tree().get_nodes_in_group(objective_group_name).size()
+	var size_of_group = get_tree().get_nodes_in_group(objective_group_name).size()
+	var remaining_objectives: int = size_of_group - 1
 	
 	if remaining_objectives < 1:
 		i__finish_quest()
