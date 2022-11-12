@@ -15,8 +15,14 @@ signal quest_finished
 signal quest_started
 
 func s__on_objective_finished():
-	if get_tree().get_nodes_in_group(objective_group_name).size() <= 0:
+	var remaining_objectives: int = get_tree().get_nodes_in_group(objective_group_name).size()
+	
+	if remaining_objectives < 1:
 		i__finish_quest()
+	else:
+		# The old objective has been removed from the list
+		var objective: Objective = get_tree().get_nodes_in_group(objective_group_name)[0]
+		objective.call_deferred("i__start_objective")
 	pass
 
 ## Virtual methods
@@ -48,3 +54,6 @@ func add_objective(objective: Objective):
 	get_tree().current_scene.add_child(objective)
 	push_warning("add_objective() defaulting to get_tree().current_scene.add_child()")
 	pass
+
+func current() -> Objective:
+	return get_tree().get_nodes_in_group(objective_group_name)[0] if get_tree().get_nodes_in_group(objective_group_name).size() > 0 else null

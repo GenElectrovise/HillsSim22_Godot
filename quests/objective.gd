@@ -22,6 +22,7 @@ func i__start_objective():
 func i__finish_objective():
 	finished = true
 	emit_signal("objective_finished")
+	i__clean_objective()
 	pass
 
 func i__clean_objective():

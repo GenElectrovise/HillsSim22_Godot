@@ -19,6 +19,8 @@ func _ready():
 	# updating finished=true on this object (quest_in / get_quest(0,0)) updates in the manager
 	# dumping before and after proves the update
 	
+	QuestManager.dump()
+	
 	GUI.HUD.visible = true
 	pass # Replace with function body.
 

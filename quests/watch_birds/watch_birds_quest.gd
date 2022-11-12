@@ -17,7 +17,13 @@ func _init(quest_type_in):
 
 # Inherited #
 
+func s__on_objective_finished():
+	.s__on_objective_finished()
+	pass
+
 func i__start_quest():
+	add_objectives()
+	
 	.i__start_quest()
 	if get_tree().get_nodes_in_group(objective_group_name).size() > 0:
 		get_tree().get_nodes_in_group(objective_group_name)[0].i__start_objective()
@@ -36,8 +42,7 @@ func add_objectives():
 		if possible_locations.size() > 0:
 			var position_index = Global.random.randi_range(0, possible_locations.size() - 1)
 			var position = possible_locations[position_index]
-			possible_locations.remove(position_index) # Each location can only be used once
+			# Each location can only be used once
+			possible_locations.remove(position_index) 
 			var birds: WatchBirdsObjective = WatchBirdsObjective.new(position)
 			add_objective(birds)
-	
-	QuestManager.dump()

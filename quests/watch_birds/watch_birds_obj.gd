@@ -21,11 +21,16 @@ func i__start_objective():
 	BirdsNest.connect("on_birds_watched", self, "on_birds_watched")
 	get_tree().current_scene.add_child(BirdsNest)
 	## ^^ Current scene?
+	print("Watching birds")
 
-func on_birds_watched():
-	finished = true
-	QuestManager.notify_quests_objective_completed()
+func i__finish_objective():
+	.i__finish_objective()
+	print("Birds have been watched")
 
 func i__clean_objective():
 	.i__clean_objective()
 	BirdsNest.queue_free()
+	print("Birds have been cleaned")
+
+func on_birds_watched():
+	i__finish_objective()

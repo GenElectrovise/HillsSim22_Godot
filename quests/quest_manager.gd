@@ -23,6 +23,10 @@ func s__on_quest_finished():
 			quest.i__clean_quest()
 	pass
 
+func _physics_process(delta):
+	if Input.is_action_just_pressed("debug"):
+		QuestManager.dump()
+
 ##
 
 func add_quest(quest: Quest):
