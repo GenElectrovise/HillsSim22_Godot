@@ -14,18 +14,18 @@ func _init(position: Vector3).():
 
 # Inherited #
 
-func start_o():
-	.__start_o__()
+func i__start_objective():
+	.i__start_objective()
 	BirdsNest = BirdsNestScene.instance()
-	BirdsNest.position = self.position
+	BirdsNest.position = Vector2(self.position.x, self.position.y)
 	BirdsNest.connect("on_birds_watched", self, "on_birds_watched")
-	#Global.CurrentScene.add_child(BirdsNest)
 	get_tree().current_scene.add_child(BirdsNest)
+	## ^^ Current scene?
 
 func on_birds_watched():
 	finished = true
 	QuestManager.notify_quests_objective_completed()
 
-func clean_o():
-	.__clean_o__()
+func i__clean_objective():
+	.i__clean_objective()
 	BirdsNest.queue_free()

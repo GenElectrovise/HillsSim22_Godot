@@ -3,7 +3,6 @@ class_name Quest extends Node
 export var QuestName = "?"
 export var QuestDescription = "..."
 
-var stage: int = -1 
 var started: bool = false
 var finished: bool = false
 var type: int = -1
@@ -16,10 +15,8 @@ signal quest_finished
 signal quest_started
 
 func s__on_objective_finished():
-	stage += 1
-	if stage >= get_tree().get_nodes_in_group(objective_group_name).size():
+	if get_tree().get_nodes_in_group(objective_group_name).size() <= 0:
 		i__finish_quest()
-		return
 	pass
 
 ## Virtual methods
@@ -48,4 +45,6 @@ func add_objective(objective: Objective):
 	print("Adding ", objective.to_string(), " to ", self.to_string(), "(", objective_group_name, ")")
 	objective.add_to_group(objective_group_name)
 	objective.connect("objective_finished", self, "s__on_objective_finished")
+	get_tree().current_scene.add_child(objective)
+	push_warning("add_objective() defaulting to get_tree().current_scene.add_child()")
 	pass

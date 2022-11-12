@@ -11,19 +11,23 @@ func _on_visibility_changed():
 	pass
 
 func refresh_text():
-	var study_quest: Quest = QuestManager.get_current("study")
+	var study_quests = get_tree().get_nodes_in_group(QuestManager.STUDY_GRP)
+	var study_quest = study_quests[0] if study_quests.size() > 0 else null
 	var study_objec: Objective = study_quest.current() if study_quest != null else null
 	refresh_info(study_quest, study_objec, StudyInfo)
 	
-	var social_quest: Quest = QuestManager.get_current("social")
+	var social_quests = get_tree().get_nodes_in_group(QuestManager.SOCIAL_GRP)
+	var social_quest = social_quests[0] if social_quests.size() > 0 else null
 	var social_objec: Objective = social_quest.current() if social_quest != null else null
 	refresh_info(social_quest, social_objec, SocialInfo)
 	
-	var personal_quest: Quest = QuestManager.get_current("personal")
+	var personal_quests = get_tree().get_nodes_in_group(QuestManager.PERSONAL_GRP)
+	var personal_quest = personal_quests[0] if personal_quests.size() > 0 else null
 	var personal_objec: Objective = personal_quest.current() if personal_quest != null else null
 	refresh_info(personal_quest, personal_objec, PersonalInfo)
 	
-	var future_quest: Quest = QuestManager.get_current("future")
+	var future_quests = get_tree().get_nodes_in_group(QuestManager.FUTURE_GRP)
+	var future_quest = future_quests[0] if future_quests.size() > 0 else null
 	var future_objec: Objective = future_quest.current() if future_quest != null else null
 	refresh_info(future_quest, future_objec, FutureInfo)
 	

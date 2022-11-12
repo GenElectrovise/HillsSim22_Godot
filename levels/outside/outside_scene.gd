@@ -11,9 +11,8 @@ var time: float = 0
 func _ready():
 	QuestManager.dump()
 	var quest_in = WatchBirdsQuest.new(QuestManager.QuestTypes.STUDY)
-	QuestManager.register_quest(quest_in, QuestManager.QuestTypes.STUDY)
-	quest_in.prepare_q()
-	quest_in.start_q()
+	QuestManager.add_quest(quest_in)
+	quest_in.i__start_quest()
 	Clock.pause(false)
 	# in and out are the same!
 	# the first objective has now started successfully

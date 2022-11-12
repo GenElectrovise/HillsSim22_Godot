@@ -5,33 +5,28 @@ class_name WatchBirdsQuest
 #export(Vector2) var tp_destination_position = $Teleporter.destination_position
 
 var possible_locations = [
-	Vector2(30,30),
-	Vector2(30,60),
-	Vector2(30,90)
+	Vector3(30,30,0),
+	Vector3(30,60,0),
+	Vector3(30,90,0)
 ]
 
 func _init(quest_type_in):
 	QuestName = "Birdwatching"
 	QuestDescription = "Stare intently at some birds."
-	quest_type = quest_type_in
+	type = quest_type_in
 
 # Inherited #
 
-func prepare_q():
-	.__prepare_q__()
-	add_objectives() 
+func i__start_quest():
+	.i__start_quest()
+	if get_tree().get_nodes_in_group(objective_group_name).size() > 0:
+		get_tree().get_nodes_in_group(objective_group_name)[0].i__start_objective()
+	else:
+		push_error(str("Quest ", self, " attempted to i__start_quest() with no Objectives. Finishing it with i__finish_quest()"))
+		i__finish_quest()
 
-func start_q():
-	.__start_q__()
-	stage = 0
-	QuestManager.study_index = quest_id
-	current().start_o()
-
-func clean_q():
-	.__clean_q__()
-
-func check_objectives():
-	.__check_objectives__()
+func i__clean_quest():
+	.i__clean_quest()
 
 # Custom #
 
@@ -42,8 +37,7 @@ func add_objectives():
 			var position_index = Global.random.randi_range(0, possible_locations.size() - 1)
 			var position = possible_locations[position_index]
 			possible_locations.remove(position_index) # Each location can only be used once
-			var birds = WatchBirdsObjective.new()
-			birds.prepare_o(position)
+			var birds: WatchBirdsObjective = WatchBirdsObjective.new(position)
 			add_objective(birds)
 	
 	QuestManager.dump()
