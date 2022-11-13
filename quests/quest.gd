@@ -26,6 +26,8 @@ func s__on_objective_finished():
 	else:
 		# The old objective has been removed from the list
 		var objective: Objective = get_tree().get_nodes_in_group(objective_group_name)[0]
+		objective.remove_from_group(objective_group_name)
+		objective = get_tree().get_nodes_in_group(objective_group_name)[0]
 		objective.call_deferred("i__start_objective")
 	pass
 
