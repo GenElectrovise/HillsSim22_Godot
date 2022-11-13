@@ -6,7 +6,6 @@ var hovered = false
 
 
 func _on_Area2D_area_entered(area):
-	print("Entered Area2D ", self)
 	if area.name == "PlayerInteractArea":
 		emit_signal("on_birds_watched")
 	pass 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/outside_tiles.png-18574280e5792a8d0221e3c3711a58f8.stex"
+path="res://.import/atlas.png-660585e3342555707017f1290faf6341.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/outside_tiles.png"
-dest_files=[ "res://.import/outside_tiles.png-18574280e5792a8d0221e3c3711a58f8.stex" ]
+source_file="res://assets/atlas.png"
+dest_files=[ "res://.import/atlas.png-660585e3342555707017f1290faf6341.stex" ]
 
 [params]
 
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0

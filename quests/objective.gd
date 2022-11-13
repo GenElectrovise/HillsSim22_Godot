@@ -15,18 +15,18 @@ signal objective_started
 ## Virtual methods
 
 func i__start_objective():
-	print("Starting Objective: ", self)
+	print("Objectives > Starting ", self)
 	started = true
 	emit_signal("objective_started")
 	pass
 
 func i__finish_objective():
-	print("Finishing Objective: ", self)
+	print("Objectives > Finishing ", self)
 	finished = true
 	emit_signal("objective_finished")
 	i__clean_objective()
 	pass
 
 func i__clean_objective():
-	print("Cleaning Objective: ", self)
+	print("Objectives > Cleaning ", self)
 	queue_free()

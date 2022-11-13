@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://assets/outside_tiles.png" type="Texture" id=1]
+[ext_resource path="res://assets/atlas.png" type="Texture" id=1]
 [ext_resource path="res://levels/inside/inside_scene.gd" type="Script" id=2]
 [ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://quests/watch_birds/WatchBirdsObjective.tscn" type="PackedScene" id=4]

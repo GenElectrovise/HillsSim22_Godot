@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://levels/outside/outside_tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://decorations/grass_medium.tscn" type="PackedScene" id=6]
 [ext_resource path="res://buildings/g_block.tscn" type="PackedScene" id=7]
 [ext_resource path="res://decorations/dead_tree.tscn" type="PackedScene" id=8]
+[ext_resource path="res://decorations/bush_medium.tscn" type="PackedScene" id=9]
 
 [node name="Outside" type="Node2D"]
 script = ExtResource( 4 )
@@ -55,6 +56,17 @@ position = Vector2( 87, -46 )
 [node name="Grass Medium 6" parent="TileMap/Decorations/Medium Grass" instance=ExtResource( 6 )]
 position = Vector2( -13, 57 )
 
+[node name="Medium Bushes" type="Node2D" parent="TileMap/Decorations"]
+
+[node name="Node2D3" parent="TileMap/Decorations/Medium Bushes" instance=ExtResource( 9 )]
+position = Vector2( 50, -67 )
+
+[node name="Node2D2" parent="TileMap/Decorations/Medium Bushes" instance=ExtResource( 9 )]
+position = Vector2( 42, -61 )
+
+[node name="Node2D" parent="TileMap/Decorations/Medium Bushes" instance=ExtResource( 9 )]
+position = Vector2( 59, -61 )
+
 [node name="Player" parent="." instance=ExtResource( 2 )]
 z_as_relative = false
 
@@ -63,5 +75,6 @@ current = true
 
 [node name="Light2D" parent="." instance=ExtResource( 5 )]
 position = Vector2( 76, 47 )
+scale = Vector2( 0.996489, 1 )
 
 [node name="Modulate" type="CanvasModulate" parent="."]
