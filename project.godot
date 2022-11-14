@@ -24,6 +24,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://entities/player/costume_part.gd"
 }, {
+"base": "Objective",
+"class": "FeedCrackheadsObjective",
+"language": "GDScript",
+"path": "res://quests/feed_crackheads/feed_crackheads_obj.gd"
+}, {
+"base": "Quest",
+"class": "FeedCrackheadsQuest",
+"language": "GDScript",
+"path": "res://quests/feed_crackheads/feed_crackheads_quest.gd"
+}, {
 "base": "Node",
 "class": "HUD",
 "language": "GDScript",
@@ -73,6 +83,8 @@ _global_script_class_icons={
 "BirdsNest": "",
 "Costume": "",
 "CostumePart": "",
+"FeedCrackheadsObjective": "",
+"FeedCrackheadsQuest": "",
 "HUD": "",
 "Objective": "",
 "Player": "",

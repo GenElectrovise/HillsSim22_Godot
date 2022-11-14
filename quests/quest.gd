@@ -42,7 +42,7 @@ func i__start_quest():
 func i__finish_quest():
 	print("Quests > Finishing ", self)
 	finished = true
-	emit_signal("quest_finished")
+	emit_signal("quest_finished", type)
 	pass
 
 func i__clean_quest():

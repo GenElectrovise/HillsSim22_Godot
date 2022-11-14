@@ -10,9 +10,12 @@ var time: float = 0
 
 func _ready():
 	QuestManager.dump()
-	var quest_in = WatchBirdsQuest.new(QuestManager.QuestTypes.STUDY)
-	QuestManager.add_quest(quest_in)
-	quest_in.i__start_quest()
+	var birds_quest = WatchBirdsQuest.new(QuestManager.QuestTypes.STUDY)
+	QuestManager.add_quest(birds_quest)
+	var feed_quest = FeedCrackheadsQuest.new(QuestManager.QuestTypes.STUDY)
+	QuestManager.add_quest(feed_quest)
+	
+	birds_quest.i__start_quest()
 	Clock.pause(false)
 	# in and out are the same!
 	# the first objective has now started successfully

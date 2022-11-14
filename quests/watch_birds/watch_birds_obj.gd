@@ -5,7 +5,6 @@ var BirdsNest: BirdsNest
 
 var position: Vector3 = Vector3.ZERO
 
-# Called when the node enters the scene tree for the first time.
 func _init(position: Vector3).():
 	ObjectiveDescription = "Watch birds"
 	ObjectiveLocation = "The Quad"
@@ -27,8 +26,11 @@ func i__finish_objective():
 	.i__finish_objective()
 
 func i__clean_objective():
-	.i__clean_objective()
 	BirdsNest.queue_free()
+	.i__clean_objective()
 
 func on_birds_watched():
 	i__finish_objective()
+
+func _to_string():
+	return str("WatchBirdsObj{}")

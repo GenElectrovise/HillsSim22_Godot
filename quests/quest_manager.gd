@@ -17,10 +17,19 @@ enum QuestTypes {
 
 # Check every Quest
 # If finished, remove from quests and type_quests groups
-func s__on_quest_finished():
+func s__on_quest_finished(quest_type):
+	
+	#Clean old quests
 	for quest in get_tree().get_nodes_in_group(QUESTS_GRP):
 		if quest.finished:
 			quest.i__clean_quest()
+	
+	# Start next quest
+	var arr: Array = get_tree().get_nodes_in_group(get_quest_group_name(quest_type))
+	for quest in arr:
+		if !quest.started:
+			quest.i__start_quest()
+			break
 	pass
 
 func _physics_process(delta):

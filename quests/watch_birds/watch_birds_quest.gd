@@ -46,3 +46,6 @@ func add_objectives():
 			possible_locations.remove(position_index) 
 			var birds: WatchBirdsObjective = WatchBirdsObjective.new(position)
 			add_objective(birds)
+
+func _to_string():
+	return str("WatchBirdsQuest{}")
