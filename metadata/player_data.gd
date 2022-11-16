@@ -17,7 +17,7 @@ func stash(player):
 	
 	print(to_string())
 
-func regenerate(player: Player):
+func regenerate(player):
 	print("Regenerating player data from ", to_string())
 	player.position = position
 

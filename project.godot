@@ -49,11 +49,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://quests/objective.gd"
 }, {
-"base": "KinematicBody2D",
-"class": "Player",
-"language": "GDScript",
-"path": "res://entities/player/player.gd"
-}, {
 "base": "Node",
 "class": "Quest",
 "language": "GDScript",
@@ -93,7 +88,6 @@ _global_script_class_icons={
 "Goth": "",
 "HUD": "",
 "Objective": "",
-"Player": "",
 "Quest": "",
 "QuestsInfo": "",
 "Teleporter": "",
@@ -117,6 +111,7 @@ Levels="*res://levels/levels.gd"
 GUI="*res://gui/GUI.tscn"
 Clock="*res://metadata/Clock.tscn"
 WeatherManager="*res://metadata/weather_manager.gd"
+Player="*res://entities/player/Player.tscn"
 
 [display]
 

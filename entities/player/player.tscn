@@ -21,7 +21,7 @@ script = ExtResource( 2 )
 position = Vector2( 0.5, 6 )
 shape = SubResource( 1 )
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+[node name="PlayerLightOccluder" type="LightOccluder2D" parent="."]
 occluder = SubResource( 3 )
 
 [node name="PlayerInteractArea" type="Area2D" parent="."]
@@ -29,3 +29,5 @@ occluder = SubResource( 3 )
 [node name="PlayerInteractAreaShape" type="CollisionShape2D" parent="PlayerInteractArea"]
 position = Vector2( 0, 1.5 )
 shape = SubResource( 4 )
+
+[node name="PlayerCamera" type="Camera2D" parent="."]

@@ -9,6 +9,9 @@ export var NIGHT_COLOUR: Color = Color(0,0,153/255, 1)
 var time: float = 0
 
 func _ready():
+	add_child(Player)
+	Player.CAMERA.current = true
+	
 	QuestManager.dump()
 	var birds_quest = WatchBirdsQuest.new(QuestManager.QuestTypes.STUDY)
 	QuestManager.add_quest(birds_quest)

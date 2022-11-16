@@ -1,18 +1,10 @@
 extends KinematicBody2D
 
-class_name Player
-
 const reach = 10
 const POINTER_ARROW = preload("res://entities/pointer_arrow/pointer_arrow.tscn")
 
 var COSTUME: Costume
-var PlayerEye = preload("res://assets/costumes/generic/eye.png")
-var PlayerFeet = preload("res://assets/costumes/generic/feet.png")
-var PlayerHair = preload("res://assets/costumes/generic/hair.png")
-var PlayerHands = preload("res://assets/costumes/generic/hands.png")
-var PlayerHead = preload("res://assets/costumes/generic/head.png")
-var PlayerLegs = preload("res://assets/costumes/generic/legs.png")
-var PlayerShirt = preload("res://assets/costumes/generic/shirt.png")
+onready var CAMERA: Camera2D = $PlayerCamera
 
 var velocity : Vector2 = Vector2()
 var direction = Direction.SOUTH
@@ -26,9 +18,10 @@ enum Direction {
 func _ready():
 	COSTUME = get_node("PlayerCostume")
 	COSTUME.set_all("generic")
+	CAMERA.add_to_group("cameras")
 	
-	if(PlayerData.has_stash):
-		call_deferred("regenerate_from_player_data")
+#	if(PlayerData.has_stash):
+#		call_deferred("regenerate_from_player_data")
 
 func handle_input():
 	handle_movement_input()
@@ -56,8 +49,8 @@ func _physics_process(_delta):
 	handle_input()
 	# look_at_mouse()
 		
-func regenerate_from_player_data():
-	PlayerData.regenerate(self)
+#func regenerate_from_player_data():
+#	PlayerData.regenerate(self)
 
 func set_movement_enabled(enabled: bool):
 	print("movement_enabled: ", enabled)

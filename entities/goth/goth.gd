@@ -10,6 +10,8 @@ func _ready():
 	COSTUME.set_all("goth")
 	pass
 
+
+
 func _notification(what):
 	if what == NOTIFICATION_PREDELETE:
 		# destructor logic
