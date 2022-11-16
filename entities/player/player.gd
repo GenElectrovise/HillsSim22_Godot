@@ -5,7 +5,14 @@ class_name Player
 const reach = 10
 const POINTER_ARROW = preload("res://entities/pointer_arrow/pointer_arrow.tscn")
 
-onready var COSTUME: Costume = $PlayerCostume
+var COSTUME: Costume
+var PlayerEye = preload("res://assets/costumes/generic/eye.png")
+var PlayerFeet = preload("res://assets/costumes/generic/feet.png")
+var PlayerHair = preload("res://assets/costumes/generic/hair.png")
+var PlayerHands = preload("res://assets/costumes/generic/hands.png")
+var PlayerHead = preload("res://assets/costumes/generic/head.png")
+var PlayerLegs = preload("res://assets/costumes/generic/legs.png")
+var PlayerShirt = preload("res://assets/costumes/generic/shirt.png")
 
 var velocity : Vector2 = Vector2()
 var direction = Direction.SOUTH
@@ -17,13 +24,14 @@ enum Direction {
 }
 
 func _ready():
+	COSTUME = get_node("PlayerCostume")
+	COSTUME.set_all("generic")
+	
 	if(PlayerData.has_stash):
 		call_deferred("regenerate_from_player_data")
-	COSTUME.reset()
 
 func handle_input():
 	handle_movement_input()
-	handle_interaction_input()
 
 func handle_movement_input():
 	if !movement_enabled:
@@ -40,13 +48,6 @@ func handle_movement_input():
 	velocity = velocity.normalized()
 	velocity = move_and_slide(velocity * 100)
 
-func handle_interaction_input():
-	if !interaction_enabled:
-		return
-	if(Input.is_action_just_pressed("player_interact")):
-		print("Trying to interact")
-		attempt_interact()
-
 func look_at_mouse():
 	look_at(get_global_mouse_position())
 	rotation_degrees = rotation_degrees + 90
@@ -54,12 +55,6 @@ func look_at_mouse():
 func _physics_process(_delta):
 	handle_input()
 	# look_at_mouse()
-
-func attempt_interact():
-	var point = get_global_mouse_position()
-	var arrow = POINTER_ARROW.instance()
-	arrow.initialize(point)
-	add_child(arrow)
 		
 func regenerate_from_player_data():
 	PlayerData.regenerate(self)

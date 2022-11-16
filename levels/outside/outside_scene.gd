@@ -31,7 +31,7 @@ func _physics_process(delta):
 	time += delta
 	Map.material.set_shader_param("temperature", WeatherManager.get_temperature_noise());
 
-func _process(delta):
+func _process(_delta):
 	var blend = -cos(Clock.get_total_mins() * (2*PI)/(60 * 24))
 	var blend_m = 0.6 + (0.4 * blend)
 	Modulate.color = NIGHT_COLOUR.linear_interpolate(DAY_COLOUR, blend_m)

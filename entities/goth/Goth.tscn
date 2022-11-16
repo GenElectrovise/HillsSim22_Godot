@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://entities/goth/goth.gd" type="Script" id=1]
+[ext_resource path="res://costumes/Costume.tscn" type="PackedScene" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 3.5, 6 )
+
+[sub_resource type="OccluderPolygon2D" id=2]
+polygon = PoolVector2Array( -3, 12, -3, 9, -2, 9, -2, 4, -4, 4, -4, 5, -5, 5, -5, 6, -7, 6, -7, 5, -8, 5, -8, 1, -7, 1, -7, 0, -6, 0, -6, -1, -5, -1, -5, -2, -4, -2, -4, -4, -5, -4, -5, -6, -4, -6, -4, -7, -3, -7, -3, -8, -2, -8, -2, -9, 2, -9, 2, -8, 3, -8, 3, -7, 4, -7, 4, -4, 5, -4, 5, -1, 6, -1, 6, 0, 7, 0, 7, 1, 8, 1, 8, 3, 7, 3, 7, 4, 6, 4, 6, 8, 5, 8, 5, 7, 4, 7, 4, 12, 2, 12, 2, 11, 1, 11, 1, 12 )
+
+[node name="Goth" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="Costume" parent="." instance=ExtResource( 2 )]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.5, 6 )
+shape = SubResource( 1 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource( 2 )

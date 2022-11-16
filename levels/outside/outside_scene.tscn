@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://levels/outside/outside_tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://buildings/g_block.tscn" type="PackedScene" id=7]
 [ext_resource path="res://decorations/dead_tree.tscn" type="PackedScene" id=8]
 [ext_resource path="res://decorations/bush_medium.tscn" type="PackedScene" id=9]
+[ext_resource path="res://entities/goth/Goth.tscn" type="PackedScene" id=10]
 
 [node name="Outside" type="Node2D"]
 script = ExtResource( 4 )
@@ -78,3 +79,6 @@ position = Vector2( 76, 47 )
 scale = Vector2( 0.996489, 1 )
 
 [node name="Modulate" type="CanvasModulate" parent="."]
+
+[node name="Goth" parent="." instance=ExtResource( 10 )]
+position = Vector2( -69, -90 )

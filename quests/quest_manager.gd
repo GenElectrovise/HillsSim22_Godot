@@ -32,7 +32,7 @@ func s__on_quest_finished(quest_type):
 			break
 	pass
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if Input.is_action_just_pressed("debug"):
 		QuestManager.dump()
 
@@ -43,7 +43,7 @@ func add_quest(quest: Quest):
 		var qgn = get_quest_group_name(quest.type)
 		quest.add_to_group(QUESTS_GRP)
 		quest.add_to_group(qgn)
-		quest.connect("quest_finished", self, "s__on_quest_finished")
+		var _error = quest.connect("quest_finished", self, "s__on_quest_finished")
 		add_child(quest)
 
 func get_quest_group_name(type) -> String:

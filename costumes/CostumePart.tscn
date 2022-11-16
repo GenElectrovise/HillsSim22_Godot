@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://costumes/costume_part.gd" type="Script" id=2]
+
+[sub_resource type="OccluderPolygon2D" id=1]
+polygon = PoolVector2Array( 1, 0, 1, 1, -1, 1, -1, -1, 1, -1 )
+
+[node name="CostumePart" type="Sprite"]
+position = Vector2( 0, -1 )
+script = ExtResource( 2 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+visible = false
+occluder = SubResource( 1 )

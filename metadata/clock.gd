@@ -22,15 +22,15 @@ func _physics_process(delta):
 func increment_time(delta):
 	seconds += delta * MINUTES_PER_REAL_SECOND * 60 * accelerate
 	
-	var m = floor(seconds / 60)
+	var m = floor(seconds / 60.0)
 	minutes += m
 	seconds -= m * 60
 	
-	var h = floor(minutes / 60)
+	var h = floor(minutes / 60.0)
 	hours += h
 	minutes -= h * 60
 	
-	var d = floor(hours / 24)
+	var d = floor(hours / 24.0)
 	days += d
 	hours -= d * 24
 

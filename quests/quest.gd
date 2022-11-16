@@ -59,7 +59,7 @@ func i__clean_quest():
 func add_objective(objective: Objective):
 	print("Quests > Adding ", objective.to_string(), " to ", self.to_string(), "(", objective_group_name, ")")
 	objective.add_to_group(objective_group_name)
-	objective.connect("objective_finished", self, "s__on_objective_finished")
+	var _error = objective.connect("objective_finished", self, "s__on_objective_finished")
 	get_tree().current_scene.add_child(objective)
 	push_warning("add_objective() defaulting to get_tree().current_scene.add_child()")
 	pass
