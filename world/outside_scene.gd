@@ -32,7 +32,7 @@ func _ready():
 
 func _physics_process(delta):
 	time += delta
-	Map.material.set_shader_param("temperature", WeatherManager.get_temperature_noise());
+	# Map.material.set_shader_param("temperature", WeatherManager.get_temperature_noise());
 
 func _process(_delta):
 	var blend = -cos(Clock.get_total_mins() * (2*PI)/(60 * 24))
