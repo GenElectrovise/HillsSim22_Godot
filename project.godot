@@ -64,11 +64,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://gui/hud/quests_info.gd"
 }, {
-"base": "Node2D",
-"class": "Teleporter",
-"language": "GDScript",
-"path": "res://entities/teleporter/teleporter.gd"
-}, {
 "base": "Node",
 "class": "TitleScreen",
 "language": "GDScript",
@@ -96,7 +91,6 @@ _global_script_class_icons={
 "Objective": "",
 "Quest": "",
 "QuestsInfo": "",
-"Teleporter": "",
 "TitleScreen": "",
 "WatchBirdsObjective": "",
 "WatchBirdsQuest": ""
