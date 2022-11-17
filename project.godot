@@ -45,6 +45,11 @@ _global_script_classes=[ {
 "path": "res://gui/hud/hud.gd"
 }, {
 "base": "Node",
+"class": "LevelManager",
+"language": "GDScript",
+"path": "res://metadata/level_manager.gd"
+}, {
+"base": "Node",
 "class": "Objective",
 "language": "GDScript",
 "path": "res://quests/objective.gd"
@@ -87,6 +92,7 @@ _global_script_class_icons={
 "FeedCrackheadsQuest": "",
 "Goth": "",
 "HUD": "",
+"LevelManager": "",
 "Objective": "",
 "Quest": "",
 "QuestsInfo": "",
