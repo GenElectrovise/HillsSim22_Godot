@@ -40,6 +40,7 @@ func handle_movement_input():
 		velocity.x -= 1
 	velocity = velocity.normalized()
 	velocity = move_and_slide(velocity * 100)
+	PlayerData.stash(self)
 
 func look_at_mouse():
 	look_at(get_global_mouse_position())

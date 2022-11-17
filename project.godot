@@ -111,7 +111,6 @@ Levels="*res://levels/levels.gd"
 GUI="*res://gui/GUI.tscn"
 Clock="*res://metadata/Clock.tscn"
 WeatherManager="*res://metadata/weather_manager.gd"
-Player="*res://entities/player/Player.tscn"
 
 [display]
 

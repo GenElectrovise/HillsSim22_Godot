@@ -17,7 +17,7 @@ func _ready():
 	pass
 
 func _physics_process(delta):
-	navigation_agent.set_target_location(Player.position)
+	navigation_agent.set_target_location(PlayerData.position)
 	var direction = position.direction_to(navigation_agent.get_next_location())
 	velocity = direction.normalized() * SPEED
 	navigation_agent.set_velocity(velocity)
