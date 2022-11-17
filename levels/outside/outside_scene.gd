@@ -9,7 +9,7 @@ export var NIGHT_COLOUR: Color = Color(0,0,153/255, 1)
 var time: float = 0
 
 func _ready():
-	add_child(Player)
+	# add_child(Player)
 	Player.CAMERA.current = true
 	
 	QuestManager.dump()

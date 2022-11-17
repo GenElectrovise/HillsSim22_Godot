@@ -6,10 +6,10 @@ extends Node
 # health
 # depression
 
-export (float, 0, 100, 1) var charisma = 25
-export (float, 0, 100, 1) var concentration = 50
-export (float, 0, 100, 1) var happiness = 75
-export (float, 0, 100, 1) var intelligence = 100
+export (int, 0, 100, 1) var charisma: int = 25
+export (int, 0, 100, 1) var concentration: int = 50
+export (int, 0, 100, 1) var happiness: int = 75
+export (int, 0, 100, 1) var intelligence: int = 100
 
 # The position of the player. Updated infrequently but can be used during teleports.
 #var position: Vector2
