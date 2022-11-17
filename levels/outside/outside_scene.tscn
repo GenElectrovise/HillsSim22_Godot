@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://levels/outside/outside_tiles.tres" type="TileSet" id=1]
-[ext_resource path="res://levels/outside/outside_tile_material.tres" type="Material" id=3]
-[ext_resource path="res://levels/outside/outside_scene.gd" type="Script" id=4]
+[ext_resource path="res://levels/outside/outside_scene.gd" type="Script" id=2]
 [ext_resource path="res://decorations/light/light.tscn" type="PackedScene" id=5]
 [ext_resource path="res://decorations/grass_medium.tscn" type="PackedScene" id=6]
 [ext_resource path="res://buildings/g_block.tscn" type="PackedScene" id=7]
@@ -16,10 +15,9 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 0, 3, 4, 5 ) ]
 outlines = [ PoolVector2Array( -160, -112, -160, 95, 160, 96, 161, -101, -29, -99, -32, -113 ) ]
 
 [node name="Outside" type="Node2D"]
-script = ExtResource( 4 )
+script = ExtResource( 2 )
 
 [node name="TileMap" type="TileMap" parent="."]
-material = ExtResource( 3 )
 z_index = -10
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
