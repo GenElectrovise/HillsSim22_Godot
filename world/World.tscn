@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://world/outside_tiles.tres" type="TileSet" id=1]
-[ext_resource path="res://world/outside_scene.gd" type="Script" id=2]
+[ext_resource path="res://world/Tiles.tres" type="TileSet" id=1]
+[ext_resource path="res://world/world.gd" type="Script" id=2]
 [ext_resource path="res://decorations/bush_medium.tscn" type="PackedScene" id=3]
 [ext_resource path="res://buildings/g_block.tscn" type="PackedScene" id=4]
 [ext_resource path="res://decorations/grass_medium.tscn" type="PackedScene" id=5]
