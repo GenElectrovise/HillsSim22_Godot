@@ -134,6 +134,7 @@ allow=false
 main=false
 anti=false
 scene=false
+gpu=false
 
 [gui]
 
