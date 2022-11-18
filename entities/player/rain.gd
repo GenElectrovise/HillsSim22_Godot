@@ -1,8 +1,11 @@
 extends Particles2D
 
+export (bool) var force = false
+export (bool) var allowed = false
+
 func _process(_delta):
-	if WeatherManager.is_raining():
-		amount = 300
+	if (allowed and WeatherManager.is_raining()) or force:
+		emitting = true
 	else:
-		 amount = 0
+		emitting = false
 	pass 
