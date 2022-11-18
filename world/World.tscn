@@ -131,15 +131,18 @@ z_index = 1
 
 [node name="Rain" type="Particles2D" parent="Player"]
 position = Vector2( 0, -150 )
+emitting = false
 amount = 600
 lifetime = 3.0
 process_material = SubResource( 3 )
 script = ExtResource( 10 )
+allowed = true
 
 [node name="Snow" type="Particles2D" parent="Player"]
 position = Vector2( 0, -150 )
+emitting = false
 amount = 1000
 lifetime = 3.0
 process_material = SubResource( 4 )
 script = ExtResource( 11 )
-force = true
+allowed = true

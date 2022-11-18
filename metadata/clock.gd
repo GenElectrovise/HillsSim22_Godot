@@ -2,7 +2,7 @@ extends Node
 
 const DAYS_PER_REAL_MINUTE = 0.05 # 20 minutes per day
 const MINUTES_PER_REAL_SECOND: int = 3
-const accelerate = 1
+export (float, 0.1, 200, 0.1) var accelerate
 
 var paused: bool = true
 
