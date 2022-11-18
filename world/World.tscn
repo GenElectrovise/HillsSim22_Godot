@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://world/Tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://world/world.gd" type="Script" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://decorations/light/light.tscn" type="PackedScene" id=7]
 [ext_resource path="res://entities/goth/Goth.tscn" type="PackedScene" id=8]
 [ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=9]
+[ext_resource path="res://entities/player/rain.gd" type="Script" id=10]
+[ext_resource path="res://entities/player/snow.gd" type="Script" id=11]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( -30, -95, -283, -91, -282, -265, -29, -204, 397, -265, 161, -205, 395, -165, 162, -161 )
@@ -19,6 +21,28 @@ outlines = [ PoolVector2Array( -282, -265, 397, -265, 395, -165, 162, -161, 161,
 vertices = PoolVector2Array( 162, -160, 395, -165, 394, 250, 159, -95, -30, -95, -283, 249, -283, -91 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 3, 2, 5, 6 ) ]
 outlines = [ PoolVector2Array( -283, 249, 394, 250, 395, -165, 162, -160, 159, -95, -30, -95, -283, -91 ) ]
+
+[sub_resource type="ParticlesMaterial" id=3]
+emission_shape = 2
+emission_box_extents = Vector3( 500, 0, 1 )
+flag_disable_z = true
+gravity = Vector3( -30, 98, 0 )
+initial_velocity = 70.06
+initial_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+color = Color( 0.376471, 0.85098, 0.85098, 0.690196 )
+
+[sub_resource type="ParticlesMaterial" id=4]
+emission_shape = 2
+emission_box_extents = Vector3( 500, 0, 1 )
+flag_disable_z = true
+gravity = Vector3( -30, 98, 0 )
+initial_velocity = 70.06
+initial_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+color = Color( 0.835294, 0.992157, 0.992157, 0.690196 )
 
 [node name="World" type="Node2D"]
 script = ExtResource( 2 )
@@ -83,6 +107,7 @@ position = Vector2( 76, 47 )
 scale = Vector2( 0.996489, 1 )
 
 [node name="NavPolys" type="Node2D" parent="OutsideMap"]
+visible = false
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="OutsideMap/NavPolys"]
 navpoly = SubResource( 1 )
@@ -97,7 +122,27 @@ position = Vector2( -69, -90 )
 z_index = 1
 SPEED = 35.0
 
-[node name="Player" parent="OutsideMap/Entities" instance=ExtResource( 9 )]
-z_index = 1
+[node name="Weather" type="Node2D" parent="OutsideMap"]
 
 [node name="Modulate" type="CanvasModulate" parent="."]
+visible = false
+
+[node name="Player" parent="." instance=ExtResource( 9 )]
+position = Vector2( 100, 0 )
+z_index = 1
+
+[node name="Rain" type="Particles2D" parent="Player"]
+position = Vector2( 0, -200 )
+amount = 300
+lifetime = 3.0
+speed_scale = 2.0
+process_material = SubResource( 3 )
+script = ExtResource( 10 )
+
+[node name="Snow" type="Particles2D" parent="Player"]
+position = Vector2( 0, -200 )
+amount = 300
+lifetime = 3.0
+speed_scale = 2.0
+process_material = SubResource( 4 )
+script = ExtResource( 11 )
