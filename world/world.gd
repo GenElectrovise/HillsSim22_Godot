@@ -2,7 +2,7 @@ extends Node2D
 
 onready var Map: TileMap = $TileMap
 onready var Modulate: CanvasModulate = $Modulate
-onready var Player = $Player
+onready var Player = $OutsideMap/Entities/Player
 
 export var DAY_COLOUR: Color = Color.white
 export var NIGHT_COLOUR: Color = Color(0,0,153/255, 1)
