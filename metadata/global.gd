@@ -22,15 +22,3 @@ func is_pausable() -> bool:
 	if get_tree().current_scene.has_method("is_pausable"):
 		return get_tree().current_scene.is_pausable()
 	return false
-
-func switch_scene(path):
-	print("Deferring switch to ", path)
-	call_deferred("_deferred_switch_scene", path) # Defer until safe
-
-func _deferred_switch_scene(path):
-	print("Switching to ", path)
-	CurrentScene.free() # It is now safe to remove the current scene
-	var s = ResourceLoader.load(path) # Load the new scene.
-	CurrentScene = s.instance() # Instance the new scene.
-	get_tree().get_root().add_child(CurrentScene) # Add it to the active scene, as child of root.
-	get_tree().set_current_scene(CurrentScene) # Optionally, to make it compatible with the SceneTree.change_scene() API.

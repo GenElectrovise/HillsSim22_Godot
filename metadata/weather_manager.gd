@@ -13,6 +13,15 @@ func _init():
 	PrecipitationNoise.period = 28
 	TemperatureNoise.period = 28
 
+func is_precipitating():
+	return get_precipitation_noise() > 0
+
+func is_raining():
+	return is_precipitating() and get_temperature() > 0
+
+func is_snowing():
+	return is_precipitating() and get_temperature() <= 0
+
 func get_precipitation_noise():
 	return PrecipitationNoise.get_noise_1d(Clock.get_total_mins())
 

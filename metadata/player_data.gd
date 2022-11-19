@@ -12,19 +12,15 @@ export (int, 0, 100, 1) var happiness: int = 75
 export (int, 0, 100, 1) var intelligence: int = 100
 
 # The position of the player. Updated infrequently but can be used during teleports.
-#var position: Vector2
-#var has_stash = false;
+var position: Vector2
+var has_stash = false;
 
-#func stash(player):
-#	print("Stashing player data for ", player)
-#	has_stash = true
-#	position = player.position
-#
-#	print(to_string())
-#
-#func regenerate(player):
-#	print("Regenerating player data from ", to_string())
-#	player.position = position
-#
-#func to_string():
-#	return str("PlayerData: has_stash=", has_stash, " position=", position)
+func stash(player):
+	has_stash = true
+	position = player.position
+
+func regenerate(player):
+	player.position = position
+
+func to_string():
+	return str("PlayerData: has_stash=", has_stash, " position=", position)

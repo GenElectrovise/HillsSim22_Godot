@@ -1,4 +1,4 @@
-extends Node
+extends Control
 
 onready var HUD: HUD = $Base/HUD
 onready var Pause = $Base/Pause
