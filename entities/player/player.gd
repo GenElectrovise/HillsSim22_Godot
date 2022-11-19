@@ -1,11 +1,11 @@
-extends KinematicBody2D
+class_name Player extends KinematicBody2D
 
 const reach = 10
 const POINTER_ARROW = preload("res://entities/pointer_arrow/pointer_arrow.tscn")
 
 var COSTUME: Costume
 onready var CAMERA: Camera2D = $PlayerCamera
-onready var Affectable: Affectable = $Affectable
+onready var effect_manager: EffectManager = $EffectManager 
 
 var velocity : Vector2 = Vector2()
 var direction = Direction.SOUTH
@@ -38,6 +38,8 @@ func handle_movement_input():
 		velocity.x += 1
 	elif(Input.is_action_pressed("player_west")):
 		velocity.x -= 1
+	elif(Input.is_action_just_pressed("debug")):
+		effect_manager.add_effect("burning", [2])
 	velocity = velocity.normalized()
 	velocity = move_and_slide(velocity * 100)
 	PlayerData.stash(self)
@@ -45,8 +47,10 @@ func handle_movement_input():
 func _physics_process(_delta):
 	handle_input()
 
-func die():
+func hurt(source: DamageSource):
 	emit_signal("player_died", "Hills Road claimed your soul.")
+	for i in range(0, source.amount):
+		print("Ouch!")
 	pass
 
 func set_movement_enabled(enabled: bool):

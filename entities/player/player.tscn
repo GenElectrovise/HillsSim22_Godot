@@ -2,7 +2,7 @@
 
 [ext_resource path="res://costumes/Costume.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entities/player/player.gd" type="Script" id=2]
-[ext_resource path="res://entities/Affectable.tscn" type="PackedScene" id=4]
+[ext_resource path="res://entities/player/EffectManager.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3.5, 6 )
@@ -33,4 +33,4 @@ shape = SubResource( 4 )
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
 
-[node name="Affectable" parent="." instance=ExtResource( 4 )]
+[node name="EffectManager" parent="." instance=ExtResource( 3 )]
