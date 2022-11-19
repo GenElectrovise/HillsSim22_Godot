@@ -8,7 +8,7 @@
 [ext_resource path="res://decorations/dead_tree.tscn" type="PackedScene" id=6]
 [ext_resource path="res://decorations/light/light.tscn" type="PackedScene" id=7]
 [ext_resource path="res://entities/goth/Goth.tscn" type="PackedScene" id=8]
-[ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=9]
+[ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=9]
 [ext_resource path="res://entities/player/rain.gd" type="Script" id=10]
 [ext_resource path="res://entities/player/snow.gd" type="Script" id=11]
 
