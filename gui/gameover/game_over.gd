@@ -3,11 +3,13 @@ extends Node
 class_name GameOver
 
 onready var SURVIVED: Control = $Survived
+onready var LOST: Control = $Lost
 
-# Called when the node enters the scene tree for the first time.
+var message = "rip bozo"
+
 func _ready():
-	change_menu("main")
+	change_menu("survived")
 
 func change_menu(name):
-	
-	SURVIVED.visible = true if name == "main" else false
+	SURVIVED.visible = true if name == "survived" else false
+	LOST.visible = true if name == "lost" else false

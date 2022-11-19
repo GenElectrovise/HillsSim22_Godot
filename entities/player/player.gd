@@ -49,8 +49,10 @@ func _physics_process(_delta):
 
 func hurt(source: DamageSource):
 	emit_signal("player_died", "Hills Road claimed your soul.")
-	for i in range(0, source.amount):
-		print("Ouch!")
+	print("Hurt! Game Over!")
+	var gameover = load("res://gui/gameover/GameOver.tscn")
+	GUI.HUD.visible = false
+	get_tree().change_scene_to(gameover)
 	pass
 
 func set_movement_enabled(enabled: bool):
