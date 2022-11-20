@@ -23,7 +23,7 @@ func _ready():
 	
 	QuestManager.dump()
 	
-	GUI.HUD.visible = true
+	# GUI.HUD.visible = true
 	pass
 
 func _physics_process(delta):
@@ -42,4 +42,4 @@ func is_pausable():
 func you_survived_hills_road():
 	print("You survived!")
 	GUI.HUD.visible = false
-	get_tree().change_scene("res://gui/gameover/GameOver.tscn")
+	get_tree().change_scene("res://gui/survived/Survived.tscn")

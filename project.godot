@@ -44,11 +44,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://quests/feed_crackheads/feed_crackheads_quest.gd"
 }, {
-"base": "Node",
-"class": "GameOver",
-"language": "GDScript",
-"path": "res://gui/game_over/game_over.gd"
-}, {
 "base": "KinematicBody2D",
 "class": "Goth",
 "language": "GDScript",
@@ -57,7 +52,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "HUD",
 "language": "GDScript",
-"path": "res://gui/hud/hud.gd"
+"path": "res://gui/roots/hud/hud.gd"
 }, {
 "base": "Node",
 "class": "LevelManager",
@@ -82,12 +77,7 @@ _global_script_classes=[ {
 "base": "VBoxContainer",
 "class": "QuestsInfo",
 "language": "GDScript",
-"path": "res://gui/hud/quests_info.gd"
-}, {
-"base": "Node",
-"class": "TitleScreen",
-"language": "GDScript",
-"path": "res://gui/title_old/title_old.gd"
+"path": "res://gui/roots/hud/quests_info.gd"
 }, {
 "base": "Objective",
 "class": "WatchBirdsObjective",
@@ -107,7 +97,6 @@ _global_script_class_icons={
 "EffectManager": "",
 "FeedCrackheadsObjective": "",
 "FeedCrackheadsQuest": "",
-"GameOver": "",
 "Goth": "",
 "HUD": "",
 "LevelManager": "",
@@ -115,7 +104,6 @@ _global_script_class_icons={
 "Player": "",
 "Quest": "",
 "QuestsInfo": "",
-"TitleScreen": "",
 "WatchBirdsObjective": "",
 "WatchBirdsQuest": ""
 }
@@ -123,7 +111,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Hills Sim 22 Godot"
-run/main_scene="res://gui/title_old/title_old.tscn"
+run/main_scene="res://gui/roots/title/Title.tscn"
 config/icon="res://icon.png"
 
 [autoload]
