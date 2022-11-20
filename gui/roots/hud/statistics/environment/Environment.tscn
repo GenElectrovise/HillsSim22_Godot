@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://gui/roots/hud/statistics/environment/temperature.gd" type="Script" id=1]
+[ext_resource path="res://gui/roots/hud/statistics/environment/time.gd" type="Script" id=2]
+[ext_resource path="res://assets/fonts/m5x7.tres" type="DynamicFont" id=3]
+
+[node name="Environment" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+grow_horizontal = 0
+
+[node name="Time" type="Label" parent="VBoxContainer"]
+margin_right = 40.0
+margin_bottom = 10.0
+grow_horizontal = 0
+custom_fonts/font = ExtResource( 3 )
+text = "23:41"
+script = ExtResource( 2 )
+
+[node name="Temperature" type="Label" parent="VBoxContainer"]
+margin_top = 14.0
+margin_right = 40.0
+margin_bottom = 24.0
+grow_horizontal = 0
+custom_fonts/font = ExtResource( 3 )
+text = "0C"
+script = ExtResource( 1 )

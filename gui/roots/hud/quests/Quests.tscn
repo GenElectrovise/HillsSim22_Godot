@@ -4,13 +4,12 @@
 [ext_resource path="res://assets/gui/roundel_future.png" type="Texture" id=2]
 [ext_resource path="res://assets/gui/roundel_social.png" type="Texture" id=3]
 [ext_resource path="res://assets/gui/roundel_personal.png" type="Texture" id=4]
-[ext_resource path="res://gui/roots/hud/QuestsInfo.tscn" type="PackedScene" id=5]
-[ext_resource path="res://gui/roots/hud/BigRedButton.tscn" type="PackedScene" id=6]
-[ext_resource path="res://gui/roots/hud/quest_widget.gd" type="Script" id=7]
+[ext_resource path="res://gui/roots/hud/quests/QuestsInfo.tscn" type="PackedScene" id=5]
+[ext_resource path="res://gui/roots/hud/quests/BigRedButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://gui/roots/hud/quests/quest.gd" type="Script" id=7]
 [ext_resource path="res://themes/menu_theme/menu_theme.tres" type="Theme" id=9]
 
-
-[node name="QuestsWidget" type="Control"]
+[node name="Quests" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_pivot_offset = Vector2( -111, 195 )
@@ -34,18 +33,38 @@ margin_bottom = 75.0
 
 [node name="Study" parent="Foreground" instance=ExtResource( 5 )]
 RoundelTexture_Texture = ExtResource( 1 )
+QuestTitle_Text = null
+QuestDescription_Text = null
+ObjectiveLocation_Text = null
+ObjectivePart_Text = null
+ObjectiveDescription_Text = null
 
 [node name="Social" parent="Foreground" instance=ExtResource( 5 )]
 visible = false
 RoundelTexture_Texture = ExtResource( 3 )
+QuestTitle_Text = null
+QuestDescription_Text = null
+ObjectiveLocation_Text = null
+ObjectivePart_Text = null
+ObjectiveDescription_Text = null
 
 [node name="Personal" parent="Foreground" instance=ExtResource( 5 )]
 visible = false
 RoundelTexture_Texture = ExtResource( 4 )
+QuestTitle_Text = null
+QuestDescription_Text = null
+ObjectiveLocation_Text = null
+ObjectivePart_Text = null
+ObjectiveDescription_Text = null
 
 [node name="Future" parent="Foreground" instance=ExtResource( 5 )]
 visible = false
 RoundelTexture_Texture = ExtResource( 2 )
+QuestTitle_Text = null
+QuestDescription_Text = null
+ObjectiveLocation_Text = null
+ObjectivePart_Text = null
+ObjectiveDescription_Text = null
 
 [node name="BigRedButton" parent="." instance=ExtResource( 6 )]
 margin_left = 100.0

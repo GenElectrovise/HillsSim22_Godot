@@ -77,7 +77,7 @@ _global_script_classes=[ {
 "base": "VBoxContainer",
 "class": "QuestsInfo",
 "language": "GDScript",
-"path": "res://gui/roots/hud/quests_info.gd"
+"path": "res://gui/roots/hud/quests/quests_info.gd"
 }, {
 "base": "Objective",
 "class": "WatchBirdsObjective",

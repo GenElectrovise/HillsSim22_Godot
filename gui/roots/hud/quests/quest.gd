@@ -1,9 +1,11 @@
 extends Control
 
-onready var StudyInfo: QuestsInfo = $Foreground/Study
-onready var SocialInfo: QuestsInfo = $Foreground/Social
-onready var PersonalInfo: QuestsInfo = $Foreground/Personal
-onready var FutureInfo: QuestsInfo = $Foreground/Future
+onready var StudyInfo = $Foreground/Study
+onready var SocialInfo = $Foreground/Social
+onready var PersonalInfo = $Foreground/Personal
+onready var FutureInfo = $Foreground/Future
+
+signal hide_quests
 
 func _on_visibility_changed():
 	if visible:
@@ -33,7 +35,7 @@ func refresh_text():
 	
 	return
 
-func refresh_info(quest: Quest, objec: Objective, info: QuestsInfo):
+func refresh_info(quest: Quest, objec: Objective, quests_info):
 	var q_name: String = quest.QuestName if quest != null else "-"
 	var q_desc: String = quest.QuestDescription if quest != null else "-"
 	var o_lctn: String = objec.ObjectiveLocation if objec != null else "-"
@@ -41,13 +43,13 @@ func refresh_info(quest: Quest, objec: Objective, info: QuestsInfo):
 	#var o_part: String = str(quest.stage + 1, "/", quest.get_child_count()) if quest != null else "-"
 	var o_img: Texture = objec.ObjectiveImage if objec != null else null
 	
-	info.QuestTitle.text = q_name
-	info.QuestDescription.text = q_desc
-	info.ObjectiveLocation.text = str("Location: ", o_lctn)
-	info.ObjectiveDescription.text = o_desc
+	quests_info.QuestTitle.text = q_name
+	quests_info.QuestDescription.text = q_desc
+	quests_info.ObjectiveLocation.text = str("Location: ", o_lctn)
+	quests_info.ObjectiveDescription.text = o_desc
 	#info.ObjectivePart.text = str("Part: ", o_part)
-	info.ObjectiveImage.texture = o_img
+	quests_info.ObjectiveImage.texture = o_img
 
 func _on_BigRedButton_pressed():
-	GUI.HUD.close_menu()
+	emit_signal("hide_quests")
 	pass

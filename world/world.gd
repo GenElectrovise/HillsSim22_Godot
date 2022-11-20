@@ -41,5 +41,4 @@ func is_pausable():
 
 func you_survived_hills_road():
 	print("You survived!")
-	GUI.HUD.visible = false
-	get_tree().change_scene("res://gui/survived/Survived.tscn")
+	get_tree().change_scene("res://gui/roots/survived/Survived.tscn")

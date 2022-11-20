@@ -14,6 +14,14 @@ export (int) var hours: int = 0
 export (int) var days: int = 0
 export (int) var season: int = 0
 
+func reset():
+	print("Resetting clock")
+	seconds = 0
+	minutes = 0
+	hours = 0
+	days = 0
+	season = 0
+
 func pause(pause: bool):
 	print("Time paused: ", pause)
 	paused = pause

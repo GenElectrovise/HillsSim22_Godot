@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://world/Tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://world/world.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=9]
 [ext_resource path="res://entities/player/rain.gd" type="Script" id=10]
 [ext_resource path="res://entities/player/snow.gd" type="Script" id=11]
+[ext_resource path="res://gui/roots/hud/HUD.tscn" type="PackedScene" id=12]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( -30, -95, -283, -91, -282, -265, -29, -204, 397, -265, 161, -205, 395, -165, 162, -161 )
@@ -146,3 +147,5 @@ lifetime = 3.0
 process_material = SubResource( 4 )
 script = ExtResource( 11 )
 allowed = true
+
+[node name="HUD" parent="." instance=ExtResource( 12 )]
