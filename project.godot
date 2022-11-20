@@ -119,8 +119,6 @@ config/icon="res://icon.png"
 Global="*res://metadata/global.gd"
 QuestManager="*res://quests/QuestManager.tscn"
 PlayerData="*res://metadata/player_data.gd"
-Levels="*res://levels/levels.gd"
-GUI="*res://gui/GUI.tscn"
 Clock="*res://metadata/Clock.tscn"
 WeatherManager="*res://metadata/weather_manager.gd"
 
