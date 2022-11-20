@@ -47,7 +47,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "GameOver",
 "language": "GDScript",
-"path": "res://gui/gameover/game_over.gd"
+"path": "res://gui/game_over/game_over.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Goth",
@@ -87,7 +87,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "TitleScreen",
 "language": "GDScript",
-"path": "res://gui/title/title.gd"
+"path": "res://gui/title_old/title_old.gd"
 }, {
 "base": "Objective",
 "class": "WatchBirdsObjective",
@@ -123,7 +123,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Hills Sim 22 Godot"
-run/main_scene="res://gui/title/title.tscn"
+run/main_scene="res://gui/title_old/title_old.tscn"
 config/icon="res://icon.png"
 
 [autoload]
