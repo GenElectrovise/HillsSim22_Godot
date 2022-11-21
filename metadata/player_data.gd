@@ -6,28 +6,34 @@ extends Node
 # health
 # depression
 
+var stash_dirty: bool = false setget , is_stash_dirty
+var has_stash: bool = false setget , get_has_stash
+
 export (int, 0, 100, 1) var charisma: int = 25 setget set_charisma, get_charisma
 export (int, 0, 100, 1) var concentration: int = 50 setget set_concentration, get_concentration
 export (int, 0, 100, 1) var happiness: int = 75 setget set_happiness, get_happiness
 export (int, 0, 100, 1) var intelligence: int = 100 setget set_intelligence, get_intelligence
 
-var has_stash: bool = false setget , get_has_stash
 
 var position: Vector2 setget set_position, get_position
 var reach: float setget set_reach, get_reach
 
-func stash(player):
+func push(player):
 	has_stash = true
 	position = player.position
 	reach = 100
 
-func regenerate(player):
+func pop(player):
 	player.position = position
 
 func to_string():
 	return str("PlayerData: has_stash=", has_stash, " position=", position)
 
 # setget
+func is_stash_dirty() -> bool:
+	return stash_dirty
+func make_dirty():
+	stash_dirty = true
 
 func get_has_stash() -> bool:
 	return has_stash

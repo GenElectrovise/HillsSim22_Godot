@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/quests/bird_nest.png" type="Texture" id=1]
 [ext_resource path="res://quests/watch_birds/birds_nest.gd" type="Script" id=2]
 [ext_resource path="res://entities/player/Interactable.tscn" type="PackedScene" id=3]
+[ext_resource path="res://entities/teleporter/Teleporter.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 5, 4 )
@@ -107,6 +108,8 @@ visible = false
 self_modulate = Color( 1.5, 1.5, 1.5, 1 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
+
+[node name="Teleporter" parent="." instance=ExtResource( 4 )]
 
 [node name="Interactable" parent="." instance=ExtResource( 3 )]
 

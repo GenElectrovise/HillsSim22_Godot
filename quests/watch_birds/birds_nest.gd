@@ -3,6 +3,7 @@ class_name BirdsNest extends Sprite
 signal on_birds_watched
 
 onready var InteractionAnimator = $Interactable/InteractionAnimator
+onready var Teleporter = $Teleporter
 
 func _ready():
 	visible = true

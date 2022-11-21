@@ -14,6 +14,7 @@ polygon = PoolVector2Array( -3, 12, -3, 9, -2, 9, -2, 4, -4, 4, -4, 5, -5, 5, -5
 extents = Vector2( 12, 11.5 )
 
 [node name="Player" type="KinematicBody2D"]
+process_priority = -10
 script = ExtResource( 2 )
 
 [node name="PlayerCostume" parent="." instance=ExtResource( 1 )]

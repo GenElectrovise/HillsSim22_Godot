@@ -42,11 +42,12 @@ func handle_movement_input():
 		effect_manager.add_effect("burning", [2])
 	velocity = velocity.normalized()
 	velocity = move_and_slide(velocity * 100)
-	PlayerData.stash(self)
 
 func _physics_process(_delta):
+	if PlayerData.is_stash_dirty():
+		PlayerData.pop(self)
 	handle_input()
-	PlayerData.stash(self)
+	PlayerData.push(self)
 
 func hurt(source: DamageSource):
 	emit_signal("player_died", "Hills Road claimed your soul.")
