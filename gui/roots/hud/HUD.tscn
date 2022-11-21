@@ -8,6 +8,7 @@
 script = ExtResource( 2 )
 
 [node name="Statistics" parent="." instance=ExtResource( 1 )]
+mouse_filter = 2
 
 [node name="Quests" parent="." instance=ExtResource( 3 )]
 

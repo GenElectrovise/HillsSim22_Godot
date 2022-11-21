@@ -2,19 +2,20 @@ class_name BirdsNest extends Sprite
 
 signal on_birds_watched
 
-var hovered = false
+onready var InteractionAnimator = $Interactable/InteractionAnimator
 
-func _physics_process(_delta):
-	if Input.is_action_just_pressed("player_interact") && hovered:
-		push_warning("Not checking player distance interact!")
-		emit_signal("on_birds_watched")
+func _ready():
+	visible = true
+	InteractionAnimator.play_backwards("Glow")
 
-func _on_Area2D_area_entered(area):
-	if area.name == "PlayerInteractArea":
-		hovered = true
-	pass 
+func _on_Interactable_hover_changed(now_hovered):
+	if now_hovered:
+		InteractionAnimator.play("Glow")
+	else:
+		InteractionAnimator.play_backwards("Glow")
 
-func _on_Area2D_area_exited(area):
-	if area.name == "PlayerInteractArea":
-		hovered = false
-	pass 
+func _on_Interactable_on_interact():
+	print("BirdNest has been interacted with!")
+	InteractionAnimator.play("Bounce and vanish")
+	yield(InteractionAnimator, "animation_finished")
+	emit_signal("on_birds_watched")

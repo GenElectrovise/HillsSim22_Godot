@@ -46,6 +46,7 @@ func handle_movement_input():
 
 func _physics_process(_delta):
 	handle_input()
+	PlayerData.stash(self)
 
 func hurt(source: DamageSource):
 	emit_signal("player_died", "Hills Road claimed your soul.")
