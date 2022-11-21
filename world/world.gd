@@ -1,6 +1,5 @@
 extends Node2D
 
-onready var Map: TileMap = $TileMap
 onready var Modulate: CanvasModulate = $Modulate
 onready var Player = $Player
 
