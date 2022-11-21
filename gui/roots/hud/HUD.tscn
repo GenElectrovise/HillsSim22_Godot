@@ -11,6 +11,7 @@ script = ExtResource( 2 )
 mouse_filter = 2
 
 [node name="Quests" parent="." instance=ExtResource( 3 )]
+visible = false
 
 [connection signal="show_quests" from="Statistics" to="." method="s__show_quests"]
 [connection signal="hide_quests" from="Quests" to="." method="s__hide_quests"]
