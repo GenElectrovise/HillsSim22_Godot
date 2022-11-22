@@ -62,3 +62,5 @@ func set_movement_enabled(enabled: bool):
 func set_interaction_enabled(enabled: bool):
 	print("interaction_enabled: ", enabled)
 	interaction_enabled = enabled
+
+

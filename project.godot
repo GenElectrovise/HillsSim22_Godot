@@ -121,6 +121,7 @@ QuestManager="*res://quests/QuestManager.tscn"
 PlayerData="*res://metadata/player_data.gd"
 Clock="*res://metadata/Clock.tscn"
 WeatherManager="*res://metadata/weather_manager.gd"
+WorldState="*res://world/world_state.gd"
 
 [display]
 

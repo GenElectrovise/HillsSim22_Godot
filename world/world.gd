@@ -6,6 +6,8 @@ onready var Player = $Player
 export var DAY_COLOUR: Color = Color.white
 export var NIGHT_COLOUR: Color = Color(0,0,153/255, 1)
 
+var current_region: String
+
 var time: float = 0
 
 func _ready():
@@ -41,3 +43,4 @@ func is_pausable():
 func you_survived_hills_road():
 	print("You survived!")
 	get_tree().change_scene("res://gui/roots/survived/Survived.tscn")
+
