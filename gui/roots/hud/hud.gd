@@ -2,6 +2,7 @@ extends Node
 
 class_name HUD
 
+onready var HUDAnimator: AnimationPlayer = $HUDAnimator
 onready var Items: Control = $Statistics
 onready var Quests: Control = $Quests
 

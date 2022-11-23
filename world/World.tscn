@@ -139,6 +139,8 @@ shape = SubResource( 5 )
 
 [node name="WestRegion" parent="OutsideMap" instance=ExtResource( 13 )]
 region_name = "West"
+has_precipitation = true
+has_loading_screen = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OutsideMap/WestRegion"]
 position = Vector2( -34, 2 )
@@ -170,3 +172,6 @@ script = ExtResource( 11 )
 allowed = true
 
 [node name="HUD" parent="." instance=ExtResource( 12 )]
+
+[connection signal="region_entered" from="OutsideMap/OutsideRegion" to="." method="_on_region_entered"]
+[connection signal="region_entered" from="OutsideMap/WestRegion" to="." method="_on_region_entered"]

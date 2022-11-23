@@ -14,7 +14,7 @@ func _init():
 	TemperatureNoise.period = 28
 
 func is_precipitating():
-	return get_precipitation_noise() > 0
+	return WorldState.current_region.has_precipitation && get_precipitation_noise() > 0
 
 func is_raining():
 	return is_precipitating() and get_temperature() > 0
