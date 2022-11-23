@@ -1,26 +1,31 @@
 extends Node
 
-export (int) var DAYS_PER_REAL_MINUTE = 0.05 # 20 minutes per day
-export (int) var MINUTES_PER_REAL_SECOND: int = 3
+# Parameters
+export (int) var REAL_MINUTES_PER_GAME_DAY = 24
+var SPEED: float = 1440 / REAL_MINUTES_PER_GAME_DAY
 export (int) var DAYS_PER_SEASON = 3
-
 export (float, 0.1, 200, 0.1) var accelerate
-
+# Initial state
+export (int) var start_seconds: float = 0
+export (int) var start_minutes: int = 0
+export (int) var start_hours: int = 0
+export (int) var start_days: int = 0
+export (int) var start_season: int = 0
+# Running state
 export (bool) var paused: bool = true
-
-export (int) var seconds: float = 0
-export (int) var minutes: int = 0
-export (int) var hours: int = 0
-export (int) var days: int = 0
-export (int) var season: int = 0
+var seconds: float = 0
+var minutes: int = 0
+var hours: int = 0
+var days: int = 0
+var season: int = 0
 
 func reset():
 	print("Resetting clock")
-	seconds = 0
-	minutes = 0
-	hours = 0
-	days = 0
-	season = 0
+	seconds = start_seconds
+	minutes = start_minutes
+	hours = start_hours
+	days = start_days
+	season = start_season
 
 func pause(pause: bool):
 	print("Time paused: ", pause)
@@ -31,7 +36,7 @@ func _physics_process(delta):
 		increment_time(delta)
 
 func increment_time(delta):
-	seconds += delta * MINUTES_PER_REAL_SECOND * 60 * accelerate
+	seconds += delta * SPEED
 	
 	var m = floor(seconds / 60.0)
 	minutes += m
@@ -45,9 +50,7 @@ func increment_time(delta):
 	days += d
 	hours -= d * 24
 	
-	# floor(21/4) = 5; summer 2 
-	# floor(11/4) = 3; winter 1
-	season = floor(days / DAYS_PER_SEASON)
+	season = floor(days / 3)
 
 func get_formatted(): 
 	return "%s:%02d:%02d:%02d:%02d" % [get_season_name(), days, hours, minutes, seconds]
