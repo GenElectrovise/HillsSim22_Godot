@@ -4,4 +4,4 @@
 
 [node name="Clock" type="Node"]
 script = ExtResource( 1 )
-accelerate = 1.0
+accelerate = 24.0

@@ -13,11 +13,17 @@ export (int) var start_days: int = 0
 export (int) var start_season: int = 0
 # Running state
 export (bool) var paused: bool = true
+export (float) var dawn_hour: float = 4
+export (float) var day_hour: float = 6
+export (float) var dusk_hour: float = 19
+export (float) var night_hour: float = 21
 var seconds: float = 0
 var minutes: int = 0
 var hours: int = 0
 var days: int = 0
 var season: int = 0
+
+enum DayStage { DAWN, DAY, DUSK, NIGHT }
 
 func reset():
 	print("Resetting clock")
@@ -36,7 +42,7 @@ func _physics_process(delta):
 		increment_time(delta)
 
 func increment_time(delta):
-	seconds += delta * SPEED
+	seconds += delta * SPEED * accelerate
 	
 	var m = floor(seconds / 60.0)
 	minutes += m
@@ -68,3 +74,27 @@ func get_season_name():
 func get_total_mins():
 	var total = minutes + (hours * 60) + (days * 60 * 24)
 	return total
+
+func get_day_stage():
+	if hours < dawn_hour:
+		return DayStage.NIGHT
+	elif dawn_hour <= hours && hours < day_hour:
+		return DayStage.DAWN
+	elif day_hour <= hours && hours < night_hour:
+		return DayStage.DAY
+	else:
+		return DayStage.NIGHT
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -93,6 +93,11 @@ _global_script_classes=[ {
 "class": "WatchBirdsQuest",
 "language": "GDScript",
 "path": "res://quests/watch_birds/watch_birds_quest.gd"
+}, {
+"base": "CanvasModulate",
+"class": "WorldModulate",
+"language": "GDScript",
+"path": "res://world/world_modulate.gd"
 } ]
 _global_script_class_icons={
 "BirdsNest": "",
@@ -111,7 +116,8 @@ _global_script_class_icons={
 "QuestsInfo": "",
 "Region": "",
 "WatchBirdsObjective": "",
-"WatchBirdsQuest": ""
+"WatchBirdsQuest": "",
+"WorldModulate": ""
 }
 
 [application]
@@ -217,6 +223,10 @@ pause={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":16777217,"unicode":0,"echo":false,"script":null)
  ]
 }
+
+[layer_names]
+
+2d_render/layer_2="Light-layer (no shadows on entities)"
 
 [physics]
 

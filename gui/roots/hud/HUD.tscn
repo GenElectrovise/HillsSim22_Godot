@@ -29,7 +29,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ true ]
+"values": [ false ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Statistics:visible")
@@ -41,7 +41,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ true ]
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=1]
@@ -72,9 +72,11 @@ anims/RESET = SubResource( 2 )
 "anims/Show Quests" = SubResource( 3 )
 
 [node name="Statistics" parent="." instance=ExtResource( 1 )]
+visible = false
 mouse_filter = 2
 
 [node name="Quests" parent="." instance=ExtResource( 3 )]
+visible = false
 
 [node name="Loading" parent="." instance=ExtResource( 4 )]
 pause_mode = 2
