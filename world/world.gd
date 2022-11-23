@@ -46,10 +46,10 @@ func you_survived_hills_road():
 	get_tree().change_scene("res://gui/roots/survived/Survived.tscn")
 
 func _on_region_entered(region_name: String, has_loading_screen: bool):
-	print("Entered Region: ", region_name, ": ", self)
+	print("World > Entered Region: ", region_name)
 	
 	if has_loading_screen:
-		print("Loading ", region_name)
+		print("World > Loading ", region_name)
 		get_tree().paused = true
 		
 		Hud.HUDAnimator.play("Show Loading Screen")
@@ -58,5 +58,5 @@ func _on_region_entered(region_name: String, has_loading_screen: bool):
 		yield(Hud.HUDAnimator, "animation_finished")
 		
 		get_tree().paused = false
-		print("Done loading ", region_name)
+		print("World > Done loading ", region_name)
 	pass
