@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://world/Tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://world/world.gd" type="Script" id=2]
@@ -26,10 +26,7 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 3, 2, 5, 6 ) ]
 outlines = [ PoolVector2Array( -283, 249, 394, 250, 395, -165, 162, -160, 159, -95, -30, -95, -283, -91 ) ]
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 178.5, 264.5 )
-
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 95, 105 )
+extents = Vector2( 349, 266.5 )
 
 [sub_resource type="ParticlesMaterial" id=3]
 emission_shape = 2
@@ -53,6 +50,7 @@ orbit_velocity_random = 0.0
 color = Color( 0.87451, 1, 1, 1 )
 
 [node name="World" type="Node2D"]
+position = Vector2( 1, 0 )
 script = ExtResource( 2 )
 
 [node name="OutsideMap" type="TileMap" parent="."]
@@ -138,19 +136,8 @@ SPEED = 35.0
 region_name = "Outside"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OutsideMap/OutsideRegion"]
-visible = false
-position = Vector2( 223.5, -7.5 )
+position = Vector2( 53, -11 )
 shape = SubResource( 5 )
-
-[node name="WestRegion" parent="OutsideMap" instance=ExtResource( 13 )]
-region_name = "West"
-has_precipitation = true
-has_loading_screen = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OutsideMap/WestRegion"]
-visible = false
-position = Vector2( -34, 2 )
-shape = SubResource( 6 )
 
 [node name="WorldModulate" parent="." instance=ExtResource( 14 )]
 visible = true
@@ -180,4 +167,3 @@ allowed = true
 [node name="HUD" parent="." instance=ExtResource( 12 )]
 
 [connection signal="region_entered" from="OutsideMap/OutsideRegion" to="." method="_on_region_entered"]
-[connection signal="region_entered" from="OutsideMap/WestRegion" to="." method="_on_region_entered"]
