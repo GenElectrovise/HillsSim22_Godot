@@ -6,6 +6,8 @@ export (bool) var has_precipitation = false
 export (bool) var is_air_conditioned = false
 export (int) var air_temperature = 20
 export (bool) var has_loading_screen = false
+export (Array) var day_music = [] setget , get_day_music
+export (Array) var night_music = [] setget , get_night_music
 signal region_entered(region_name, has_loading_screen)
 
 func _init():
@@ -19,3 +21,9 @@ func _on_Region_area_entered(area):
 		print("World > ", area.name, " is trying to change to Region: ", region_name, ": ", self)
 		emit_signal("region_entered", region_name, has_loading_screen)
 		WorldState.current_region = self
+
+func get_day_music() -> Array:
+	return day_music
+
+func get_night_music() -> Array:
+	return night_music

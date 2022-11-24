@@ -32,10 +32,6 @@ func s__on_quest_finished(quest_type):
 			break
 	pass
 
-func _physics_process(_delta):
-	if Input.is_action_just_pressed("debug"):
-		QuestManager.dump()
-
 ##
 
 func add_quest(quest: Quest):

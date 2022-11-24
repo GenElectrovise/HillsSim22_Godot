@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://world/Tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://world/world.gd" type="Script" id=2]
@@ -14,6 +14,11 @@
 [ext_resource path="res://gui/roots/hud/HUD.tscn" type="PackedScene" id=12]
 [ext_resource path="res://world/Region.tscn" type="PackedScene" id=13]
 [ext_resource path="res://world/WorldModulate.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/music/Sleepychill.mp3" type="AudioStream" id=15]
+[ext_resource path="res://assets/music/Project_7.mp3" type="AudioStream" id=16]
+[ext_resource path="res://assets/music/Big_sound.mp3" type="AudioStream" id=17]
+[ext_resource path="res://assets/music/Amusic_track1comp.mp3" type="AudioStream" id=18]
+[ext_resource path="res://assets/music/morningstroll.mp3" type="AudioStream" id=19]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( -30, -95, -283, -91, -282, -265, -29, -204, 397, -265, 161, -205, 395, -165, 162, -161 )
@@ -134,6 +139,8 @@ SPEED = 35.0
 
 [node name="OutsideRegion" parent="OutsideMap" instance=ExtResource( 13 )]
 region_name = "Outside"
+day_music = [ ExtResource( 17 ), ExtResource( 15 ), ExtResource( 18 ) ]
+night_music = [ ExtResource( 19 ), ExtResource( 16 ) ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OutsideMap/OutsideRegion"]
 position = Vector2( 53, -11 )
@@ -166,4 +173,8 @@ allowed = true
 
 [node name="HUD" parent="." instance=ExtResource( 12 )]
 
+[node name="WorldMusicPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -15.0
+
 [connection signal="region_entered" from="OutsideMap/OutsideRegion" to="." method="_on_region_entered"]
+[connection signal="finished" from="WorldMusicPlayer" to="." method="_on_WorldMusicPlayer_finished"]

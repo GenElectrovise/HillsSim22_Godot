@@ -38,8 +38,6 @@ func handle_movement_input():
 		velocity.x += 1
 	elif(Input.is_action_pressed("player_west")):
 		velocity.x -= 1
-	elif(Input.is_action_just_pressed("debug")):
-		effect_manager.add_effect("burning", [2])
 	velocity = velocity.normalized()
 	velocity = move_and_slide(velocity * 100)
 

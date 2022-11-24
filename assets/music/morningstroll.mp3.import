@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/morningstroll.mp3-0db7ede237f46b7598c366e8ff6365b8.mp3str"
+
+[deps]
+
+source_file="res://assets/music/morningstroll.mp3"
+dest_files=[ "res://.import/morningstroll.mp3-0db7ede237f46b7598c366e8ff6365b8.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

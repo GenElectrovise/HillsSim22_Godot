@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Big_sound.mp3-c6f552c54fb9187c9dcdda5b33ebe928.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Big_sound.mp3"
+dest_files=[ "res://.import/Big_sound.mp3-c6f552c54fb9187c9dcdda5b33ebe928.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
