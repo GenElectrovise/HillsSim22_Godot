@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://world/Tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://world/world.gd" type="Script" id=2]
@@ -19,7 +19,6 @@
 [ext_resource path="res://assets/music/Big_sound.mp3" type="AudioStream" id=17]
 [ext_resource path="res://assets/music/Amusic_track1comp.mp3" type="AudioStream" id=18]
 [ext_resource path="res://assets/music/morningstroll.mp3" type="AudioStream" id=19]
-[ext_resource path="res://Post Processing tool/PostProcessing_tool.tscn" type="PackedScene" id=20]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( -30, -95, -283, -91, -282, -265, -29, -204, 397, -265, 161, -205, 395, -165, 162, -161 )
@@ -173,17 +172,6 @@ script = ExtResource( 11 )
 allowed = true
 
 [node name="HUD" parent="." instance=ExtResource( 12 )]
-
-[node name="PostProcessing_tool" parent="HUD" instance=ExtResource( 20 )]
-mouse_filter = 2
-adjustment_show = true
-adjustment_saturation = 0.8
-chromatc_aberration_show = true
-chromatc_aberration_strength = 0.05
-vignette_show = true
-vignette_multiplier = 2.0
-vignette_scale = 0.9
-vignette_softness = 1.2
 
 [node name="WorldMusicPlayer" type="AudioStreamPlayer" parent="."]
 volume_db = -15.0
