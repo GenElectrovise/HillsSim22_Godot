@@ -118,8 +118,8 @@ visible = false
 material = ExtResource( 19 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 724.0
-margin_bottom = 400.0
+margin_right = 84.0
+margin_bottom = 25.0
 mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -144,8 +144,8 @@ visible = false
 material = ExtResource( 11 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 824.0
-margin_bottom = 400.0
+margin_right = 184.0
+margin_bottom = 25.0
 mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -160,8 +160,8 @@ visible = false
 material = SubResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 824.0
-margin_bottom = 400.0
+margin_right = 184.0
+margin_bottom = 25.0
 mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -185,8 +185,8 @@ visible = false
 material = ExtResource( 20 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 824.0
-margin_bottom = 400.0
+margin_right = 184.0
+margin_bottom = 25.0
 mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -210,8 +210,8 @@ visible = false
 material = ExtResource( 15 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 824.0
-margin_bottom = 400.0
+margin_right = 184.0
+margin_bottom = 25.0
 mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -236,8 +236,8 @@ visible = false
 material = ExtResource( 12 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 824.0
-margin_bottom = 400.0
+margin_right = 184.0
+margin_bottom = 25.0
 mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
