@@ -21,14 +21,8 @@ var reach: float setget set_reach, get_reach
 func _physics_process(delta):
 	if Input.is_action_just_pressed("debug"):
 		print("Adding item to playerdata inv")
-		if randf() > 0.5:
-			print("Adding ")
-			var item_instance = load("res://inventory/ExclamationItem.tres")
-			inventory.add_item(item_instance)
-		else:
-			var i = randi() % 8
-			print("Removing ", i)
-			inventory.remove_item(i)
+		var item_instance = load("res://inventory/ExclamationItem.tres")
+		inventory.add_item(item_instance)
 
 func push(player):
 	has_stash = true

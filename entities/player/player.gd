@@ -38,8 +38,32 @@ func handle_movement_input():
 		velocity.x += 1
 	elif(Input.is_action_pressed("player_west")):
 		velocity.x -= 1
+	
+	if(Input.is_action_just_pressed("use_item_1")):
+		use_item(0)
+	elif(Input.is_action_just_pressed("use_item_2")):
+		use_item(1)
+	elif(Input.is_action_just_pressed("use_item_3")):
+		use_item(2)
+	elif(Input.is_action_just_pressed("use_item_4")):
+		use_item(3)
+	elif(Input.is_action_just_pressed("use_item_5")):
+		use_item(4)
+	elif(Input.is_action_just_pressed("use_item_6")):
+		use_item(5)
+	elif(Input.is_action_just_pressed("use_item_7")):
+		use_item(6)
+	elif(Input.is_action_just_pressed("use_item_8")):
+		use_item(7)
+	elif(Input.is_action_just_pressed("use_item_9")):
+		use_item(8)
 	velocity = velocity.normalized()
 	velocity = move_and_slide(velocity * 100)
+
+func use_item(index: int):
+	print("Player using item ", index)
+	PlayerData.inventory.remove_item(index)
+	pass
 
 func _physics_process(_delta):
 	if PlayerData.is_stash_dirty():
