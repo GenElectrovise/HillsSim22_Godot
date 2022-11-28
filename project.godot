@@ -143,7 +143,7 @@ config/icon="res://icon.png"
 Global="*res://metadata/global.gd"
 QuestManager="*res://quests/QuestManager.tscn"
 PlayerData="*res://entities/player/player_data.gd"
-Clock="*res://metadata/Clock.tscn"
+Clock="*res://world/Clock.tscn"
 WeatherManager="*res://world/weather_manager.gd"
 WorldState="*res://world/world_state.gd"
 
