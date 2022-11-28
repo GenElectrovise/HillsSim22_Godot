@@ -5,12 +5,12 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends VBoxContainer
 
-onready var Precipitation = $VBoxContainer/Precipitationcipitation
+onready var Precipitation = $VBoxContainer/Precipitation
 onready var Temperature = $VBoxContainer/Temperature
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass 
 
 func _physics_process(_delta):
 	Precipitation.text = str(\"R:\", WeatherManager.is_raining(), \" S:\", WeatherManager.is_snowing(), \" PrNs:\", WeatherManager.get_precipitation_noise())

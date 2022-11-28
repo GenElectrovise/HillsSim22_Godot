@@ -144,7 +144,7 @@ Global="*res://metadata/global.gd"
 QuestManager="*res://quests/QuestManager.tscn"
 PlayerData="*res://entities/player/player_data.gd"
 Clock="*res://metadata/Clock.tscn"
-WeatherManager="*res://metadata/weather_manager.gd"
+WeatherManager="*res://world/weather_manager.gd"
 WorldState="*res://world/world_state.gd"
 
 [display]
