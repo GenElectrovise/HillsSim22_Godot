@@ -31,7 +31,7 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 3, 2, 5, 6 ) ]
 outlines = [ PoolVector2Array( -283, 249, 394, 250, 395, -165, 162, -160, 159, -95, -30, -95, -283, -91 ) ]
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 349, 266.5 )
+extents = Vector2( 256, 280 )
 
 [sub_resource type="ParticlesMaterial" id=3]
 emission_shape = 2
@@ -121,6 +121,7 @@ color = Color( 1, 0.694118, 0.262745, 1 )
 energy = 0.8
 
 [node name="NavPolys" type="Node2D" parent="OutsideMap"]
+visible = false
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="OutsideMap/NavPolys"]
 navpoly = SubResource( 1 )
@@ -137,14 +138,14 @@ SPEED = 35.0
 
 [node name="Weather" type="Node2D" parent="OutsideMap"]
 
-[node name="OutsideRegion" parent="OutsideMap" instance=ExtResource( 13 )]
-visible = false
-region_name = "Outside"
+[node name="QuadRegion" parent="OutsideMap" instance=ExtResource( 13 )]
+region_name = "The Quad"
+has_precipitation = true
 day_music = [ ExtResource( 17 ), ExtResource( 15 ), ExtResource( 18 ) ]
 night_music = [ ExtResource( 19 ), ExtResource( 16 ) ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OutsideMap/OutsideRegion"]
-position = Vector2( 53, -11 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OutsideMap/QuadRegion"]
+position = Vector2( 160, 168 )
 shape = SubResource( 5 )
 
 [node name="WorldModulate" parent="." instance=ExtResource( 14 )]
@@ -177,5 +178,5 @@ allowed = true
 [node name="WorldMusicPlayer" type="AudioStreamPlayer" parent="."]
 volume_db = -15.0
 
-[connection signal="region_entered" from="OutsideMap/OutsideRegion" to="." method="_on_region_entered"]
+[connection signal="region_entered" from="OutsideMap/QuadRegion" to="." method="_on_region_entered"]
 [connection signal="finished" from="WorldMusicPlayer" to="." method="_on_WorldMusicPlayer_finished"]
