@@ -71,7 +71,6 @@ visible = false
 position = Vector2( -352, -192 )
 
 [node name="Decorations" type="Node2D" parent="OutsideMap"]
-visible = false
 
 [node name="Trees" type="Node2D" parent="OutsideMap/Decorations"]
 
@@ -122,7 +121,6 @@ color = Color( 1, 0.694118, 0.262745, 1 )
 energy = 0.8
 
 [node name="NavPolys" type="Node2D" parent="OutsideMap"]
-visible = false
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="OutsideMap/NavPolys"]
 navpoly = SubResource( 1 )
@@ -131,7 +129,6 @@ navpoly = SubResource( 1 )
 navpoly = SubResource( 2 )
 
 [node name="Entities" type="Node2D" parent="OutsideMap"]
-visible = false
 
 [node name="Goth" parent="OutsideMap/Entities" instance=ExtResource( 8 )]
 position = Vector2( -69, -90 )
@@ -139,7 +136,6 @@ z_index = 1
 SPEED = 35.0
 
 [node name="Weather" type="Node2D" parent="OutsideMap"]
-visible = false
 
 [node name="OutsideRegion" parent="OutsideMap" instance=ExtResource( 13 )]
 visible = false

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://gui/roots/hud/statistics/environment/Environment.tscn" type="PackedScene" id=1]
 [ext_resource path="res://gui/roots/hud/statistics/statistics.gd" type="Script" id=2]
+[ext_resource path="res://gui/roots/hud/statistics/inventory/InventorySlots.tscn" type="PackedScene" id=3]
 [ext_resource path="res://gui/roots/hud/statistics/quests/QuestsButton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://gui/roots/hud/statistics/bars/PlayerBars.tscn" type="PackedScene" id=7]
 [ext_resource path="res://gui/roots/hud/statistics/debug/Debug.tscn" type="PackedScene" id=8]
@@ -48,5 +49,11 @@ margin_left = -40.0
 margin_top = 0.0
 margin_right = 0.0
 margin_bottom = 40.0
+
+[node name="InventorySlots" parent="." instance=ExtResource( 3 )]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -20.0
+margin_bottom = 0.0
 
 [connection signal="pressed" from="QuestsButton" to="." method="_on_QuestsButton_pressed"]

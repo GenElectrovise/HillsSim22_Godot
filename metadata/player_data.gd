@@ -13,10 +13,22 @@ export (int, 0, 100, 1) var charisma: int = 25 setget set_charisma, get_charisma
 export (int, 0, 100, 1) var concentration: int = 50 setget set_concentration, get_concentration
 export (int, 0, 100, 1) var happiness: int = 75 setget set_happiness, get_happiness
 export (int, 0, 100, 1) var intelligence: int = 100 setget set_intelligence, get_intelligence
-
+var inventory = load("res://inventory/inventory.gd").new()
 
 var position: Vector2 setget set_position, get_position
 var reach: float setget set_reach, get_reach
+
+func _physics_process(delta):
+	if Input.is_action_just_pressed("debug"):
+		print("Adding item to playerdata inv")
+		if randf() > 0.5:
+			print("Adding ")
+			var item_instance = load("res://inventory/ExclamationItem.tres")
+			inventory.add_item(item_instance)
+		else:
+			var i = randi() % 8
+			print("Removing ", i)
+			inventory.remove_item(i)
 
 func push(player):
 	has_stash = true

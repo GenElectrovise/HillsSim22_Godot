@@ -32,11 +32,6 @@ func _physics_process(delta):
 		WorldMusic.stop()
 	if WorldMusic.stream == null:
 		_on_WorldMusicPlayer_finished()
-	
-	if Input.is_action_just_pressed("debug"):
-		print("Debug / Music > Seeking to get_length() - 1")
-		# WorldMusic.stream = null
-		WorldMusic.seek(WorldMusic.stream.get_length() - 1)
 
 func is_pausable():
 	return true

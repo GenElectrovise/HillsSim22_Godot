@@ -1,0 +1,112 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://themes/quest_button/quest_button_theme.tres" type="Theme" id=1]
+[ext_resource path="res://gui/roots/hud/statistics/inventory/InventorySlot.tscn" type="PackedScene" id=2]
+[ext_resource path="res://gui/roots/hud/statistics/inventory/inventory_slots.gd" type="Script" id=3]
+
+[node name="InventorySlots" type="HBoxContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -106.0
+margin_top = -10.0
+margin_right = 106.0
+margin_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource( 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="InventorySlot0" parent="." instance=ExtResource( 2 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 20.0
+margin_bottom = 20.0
+
+[node name="InventorySlot1" parent="." instance=ExtResource( 2 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 24.0
+margin_top = 0.0
+margin_right = 44.0
+margin_bottom = 20.0
+
+[node name="InventorySlot2" parent="." instance=ExtResource( 2 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 48.0
+margin_top = 0.0
+margin_right = 68.0
+margin_bottom = 20.0
+
+[node name="InventorySlot3" parent="." instance=ExtResource( 2 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 72.0
+margin_top = 0.0
+margin_right = 92.0
+margin_bottom = 20.0
+
+[node name="InventorySlot4" parent="." instance=ExtResource( 2 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 96.0
+margin_top = 0.0
+margin_right = 116.0
+margin_bottom = 20.0
+
+[node name="InventorySlot5" parent="." instance=ExtResource( 2 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 120.0
+margin_top = 0.0
+margin_right = 140.0
+margin_bottom = 20.0
+
+[node name="InventorySlot6" parent="." instance=ExtResource( 2 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 144.0
+margin_top = 0.0
+margin_right = 164.0
+margin_bottom = 20.0
+
+[node name="InventorySlot7" parent="." instance=ExtResource( 2 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 168.0
+margin_top = 0.0
+margin_right = 188.0
+margin_bottom = 20.0
+
+[node name="InventorySlot8" parent="." instance=ExtResource( 2 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 192.0
+margin_top = 0.0
+margin_right = 212.0
+margin_bottom = 20.0
