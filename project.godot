@@ -70,11 +70,6 @@ _global_script_classes=[ {
 "path": "res://inventory/item.gd"
 }, {
 "base": "Node",
-"class": "LevelManager",
-"language": "GDScript",
-"path": "res://metadata/level_manager.gd"
-}, {
-"base": "Node",
 "class": "Objective",
 "language": "GDScript",
 "path": "res://quests/objective.gd"
@@ -127,7 +122,6 @@ _global_script_class_icons={
 "Inventory": "",
 "InventorySlot": "",
 "Item": "",
-"LevelManager": "",
 "Objective": "",
 "Player": "",
 "Quest": "",
