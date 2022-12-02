@@ -62,6 +62,8 @@ func handle_movement_input():
 
 func use_item(index: int):
 	print("Player using item ", index)
+	print("HURTING")
+	hurt(DamageSource.new(DamageSource.DamageType.FIRE, 1))
 	PlayerData.inventory.remove_item(index)
 	pass
 

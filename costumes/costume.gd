@@ -58,6 +58,6 @@ func set_all(style: String):
 	set_part(style, "shirt")
 
 static func get_part(style: String, part: String):
-	var path = str("res://assets/costumes/", style, "/", part, ".png")
+	var path = str("res://costumes/textures/", style, "/", part, ".png")
 	var texture = load(path)
 	return texture
