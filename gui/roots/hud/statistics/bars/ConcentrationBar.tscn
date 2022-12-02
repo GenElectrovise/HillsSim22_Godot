@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/gui/concentration_over.png" type="Texture" id=1]
-[ext_resource path="res://assets/gui/concentration_progress.png" type="Texture" id=2]
-[ext_resource path="res://assets/gui/concentration_under.png" type="Texture" id=3]
+[ext_resource path="res://gui/textures/concentration_over.png" type="Texture" id=1]
+[ext_resource path="res://gui/textures/concentration_progress.png" type="Texture" id=2]
+[ext_resource path="res://gui/textures/concentration_under.png" type="Texture" id=3]
 
 [node name="ConcentrationBar" type="TextureProgress"]
 margin_right = 66.0

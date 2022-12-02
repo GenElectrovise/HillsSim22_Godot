@@ -17,11 +17,11 @@ export (float) var dawn_hour: float = 4
 export (float) var day_hour: float = 6
 export (float) var dusk_hour: float = 19
 export (float) var night_hour: float = 21
-var seconds: float = 0
-var minutes: int = 0
-var hours: int = 0
-var days: int = 0
-var season: int = 0
+export (int) var seconds: float = 0
+export (int) var minutes: int = 0
+export (int) var hours: int = 0
+export (int) var days: int = 0
+export (int) var season: int = 0
 
 signal second_changed(new_second)
 signal hour_changed(new_hour)

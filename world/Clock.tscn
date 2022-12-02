@@ -2,7 +2,6 @@
 
 [ext_resource path="res://world/clock.gd" type="Script" id=1]
 
-
 [node name="Clock" type="Node"]
 script = ExtResource( 1 )
 accelerate = 24.0

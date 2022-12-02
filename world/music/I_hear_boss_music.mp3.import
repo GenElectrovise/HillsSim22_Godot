@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/I_hear_boss_music.mp3-47f0226cf98de400935c4c71591ec87b.mp3str"
+
+[deps]
+
+source_file="res://world/music/I_hear_boss_music.mp3"
+dest_files=[ "res://.import/I_hear_boss_music.mp3-47f0226cf98de400935c4c71591ec87b.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

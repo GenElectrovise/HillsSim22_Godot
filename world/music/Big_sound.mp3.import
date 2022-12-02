@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Big_sound.mp3-0be70bd6f39007bb257af4bfb46835c1.mp3str"
+
+[deps]
+
+source_file="res://world/music/Big_sound.mp3"
+dest_files=[ "res://.import/Big_sound.mp3-0be70bd6f39007bb257af4bfb46835c1.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

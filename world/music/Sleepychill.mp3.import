@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Sleepychill.mp3-6d24a93d82e509e4033bd7d23a31e894.mp3str"
+
+[deps]
+
+source_file="res://world/music/Sleepychill.mp3"
+dest_files=[ "res://.import/Sleepychill.mp3-6d24a93d82e509e4033bd7d23a31e894.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

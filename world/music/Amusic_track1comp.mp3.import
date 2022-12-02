@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Amusic_track1comp.mp3-412dc77bf3bbafdba92f209835c70b95.mp3str"
+
+[deps]
+
+source_file="res://world/music/Amusic_track1comp.mp3"
+dest_files=[ "res://.import/Amusic_track1comp.mp3-412dc77bf3bbafdba92f209835c70b95.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
