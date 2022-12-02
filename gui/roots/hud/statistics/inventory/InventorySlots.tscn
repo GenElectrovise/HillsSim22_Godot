@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://themes/quest_button/quest_button_theme.tres" type="Theme" id=1]
+[ext_resource path="res://gui/roots/hud/statistics/quest_button/quest_button_theme.tres" type="Theme" id=1]
 [ext_resource path="res://gui/roots/hud/statistics/inventory/InventorySlot.tscn" type="PackedScene" id=2]
 [ext_resource path="res://gui/roots/hud/statistics/inventory/inventory_slots.gd" type="Script" id=3]
 

@@ -92,7 +92,7 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "Region",
 "language": "GDScript",
-"path": "res://world/region.gd"
+"path": "res://world/map/region.gd"
 }, {
 "base": "Objective",
 "class": "WatchBirdsObjective",
@@ -104,10 +104,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://quests/watch_birds/watch_birds_quest.gd"
 }, {
-"base": "CanvasModulate",
+"base": "Reference",
 "class": "WorldModulate",
 "language": "GDScript",
-"path": "res://world/world_modulate.gd"
+"path": "res://world/environment/world_modulate.gd"
 } ]
 _global_script_class_icons={
 "BirdsNest": "",
@@ -143,8 +143,8 @@ config/icon="res://icon.png"
 Global="*res://metadata/global.gd"
 QuestManager="*res://quests/QuestManager.tscn"
 PlayerData="*res://entities/player/player_data.gd"
-Clock="*res://world/Clock.tscn"
-WeatherManager="*res://world/weather_manager.gd"
+Clock="*res://world/clock/Clock.tscn"
+WeatherManager="*res://world/environment/weather_manager.gd"
 WorldState="*res://world/world_state.gd"
 
 [display]

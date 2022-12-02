@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://metadata/global.gd" type="Script" id=1]
-[ext_resource path="res://world/Clock.tscn" type="PackedScene" id=2]
+[ext_resource path="res://world/clock/Clock.tscn" type="PackedScene" id=2]
 [ext_resource path="res://quests/QuestManager.tscn" type="PackedScene" id=3]
-[ext_resource path="res://world/World.tscn" type="PackedScene" id=5]
-[ext_resource path="res://world/WeatherManager.tscn" type="PackedScene" id=7]
+[ext_resource path="res://world/map/World.tscn" type="PackedScene" id=5]
+[ext_resource path="res://world/environment/WeatherManager.tscn" type="PackedScene" id=7]
 
 [node name="Global" type="Node"]
 script = ExtResource( 1 )

@@ -1,6 +1,6 @@
 [gd_resource type="StyleBoxTexture" load_steps=2 format=2]
 
-[ext_resource path="res://gui/textures/menu_tab_disabled.png" type="Texture" id=1]
+[ext_resource path="res://themes/menu_theme/textures/menu_tab_disabled.png" type="Texture" id=1]
 
 
 [resource]
