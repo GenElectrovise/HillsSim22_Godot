@@ -23,6 +23,11 @@ var hours: int = 0
 var days: int = 0
 var season: int = 0
 
+signal second_changed(new_second)
+signal hour_changed(new_hour)
+signal day_changed(new_day)
+signal season_changed(new_season)
+
 enum DayStage { DAWN, DAY, DUSK, NIGHT }
 
 func reset():
